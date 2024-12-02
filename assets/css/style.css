@@ -2,8 +2,6 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5;
 }
 .container {
     display: flex;
@@ -13,35 +11,19 @@ body {
     overflow: auto;
 }
 #leftDiv {
-    width: 20%;
-    padding: 10px;
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 15%;
+    padding: 5px;
+    background-color: lightblue;
 }
 #rightDiv {
-    width: 80%;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    padding: 5px;
 }
 .divider {
-    width: 5px;
-    background-color: #007bff;
+    width: 3px;
+    background-color: lightblue;
     cursor: ew-resize;
 }
 ul, ol {
     padding-left: 20px;
-}
-.menu > li {
-    margin-bottom: 10px;
-}
-.menu > li > ul {
-    margin-top: 5px;
-}
-.menu a {
-    text-decoration: none;
-    color: #007bff;
-}
-.menu a:hover {
-    text-decoration: underline;
 }
