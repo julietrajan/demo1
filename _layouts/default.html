@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="/demo1/assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <div class="resizable" id="leftDiv">
-      <ul class="menu">
+      <ul style="list-style-type:none; padding-left: 5px;">
+        <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
         <li>Case Study
-          <ul>
+          <ul style="list-style-type:disc">
             <li>AI
               <ol>
                 {% for file in site.pages %}
@@ -71,7 +71,7 @@
           </ul>
         </li>
         <li>Comic
-          <ul>
+          <ul style="list-style-type:disc">
             <li>AI
               <ol>
                 {% for file in site.pages %}
