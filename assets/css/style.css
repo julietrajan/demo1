@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+.resizable {
+    overflow: auto;
+}
+#leftDiv {
+    width: 15%;
+    padding: 5px;
+    background-color: lightblue;
+}
+#rightDiv {
+    width: 85%;
+    padding: 5px;
+}
+.divider {
+    width: 3px;
+    background-color: lightblue;
+    cursor: ew-resize;
+}
+ul, ol {
+    padding-left: 20px;
+}
