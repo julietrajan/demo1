@@ -2,77 +2,28 @@ body {
     display: flex;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
 }
-
 .container {
     display: flex;
     width: 100%;
 }
-
 .resizable {
     overflow: auto;
 }
-
 #leftDiv {
     width: 15%;
-    padding: 10px;
-    background-color: #f0f8ff; /* Light blue background */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 5px;
+    background-color: lightblue;
 }
-
 #rightDiv {
     width: 85%;
-    padding: 20px;
-    background-color: #ffffff; /* White background */
+    padding: 5px;
 }
-
 .divider {
     width: 3px;
-    background-color: #add8e6; /* Light blue color */
+    background-color: lightblue;
     cursor: ew-resize;
 }
-
 ul, ol {
     padding-left: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: #007acc; /* Link color */
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-li {
-    margin-bottom: 5px;
-}
-
-li ul, li ol {
-    margin-top: 5px;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-}
-
-@media (max-width: 768px) {
-    #leftDiv {
-        width: 100%;
-        height: auto;
-    }
-    #rightDiv {
-        width: 100%;
-        height: auto;
-    }
-    .divider {
-        display: none;
-    }
-    .container {
-        flex-direction: column;
-    }
 }
