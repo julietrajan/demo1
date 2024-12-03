@@ -11,9 +11,9 @@
     <div class="resizable" id="leftDiv">
       <ul>
         <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
-        <li class="collapsible">Case Study
+        <li class="collapsible"><a href="#">Case Study</a>
           <ul>
-            <li class="collapsible">AI
+            <li class="collapsible"><a href="#">AI</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "AI" %}
@@ -24,7 +24,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Copilot
+            <li class="collapsible"><a href="#">Copilot</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Copilot" %}
@@ -35,7 +35,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Data
+            <li class="collapsible"><a href="#">Data</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Data" %}
@@ -46,7 +46,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Infra
+            <li class="collapsible"><a href="#">Infra</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Infra" %}
@@ -57,7 +57,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Security
+            <li class="collapsible"><a href="#">Security</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Security" %}
@@ -70,9 +70,9 @@
             </li>
           </ul>
         </li>
-        <li class="collapsible">Comic
+        <li class="collapsible"><a href="#">Comic</a>
           <ul>
-            <li class="collapsible">AI
+            <li class="collapsible"><a href="#">AI</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "AI" %}
@@ -83,7 +83,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Copilot
+            <li class="collapsible"><a href="#">Copilot</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Copilot" %}
@@ -94,7 +94,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Data
+            <li class="collapsible"><a href="#">Data</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Data" %}
@@ -105,7 +105,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Infra
+            <li class="collapsible"><a href="#">Infra</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Infra" %}
@@ -116,7 +116,7 @@
                 {% endfor %}
               </ul>
             </li>
-            <li class="collapsible">Security
+            <li class="collapsible"><a href="#">Security</a>
               <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Security" %}
