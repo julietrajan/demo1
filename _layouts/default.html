@@ -11,10 +11,10 @@
     <div class="resizable" id="leftDiv">
       <ul>
         <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
-        <li>Case Study
+        <li class="collapsible">Case Study
           <ul>
-            <li>AI
-              <ol>
+            <li class="collapsible">AI
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "AI" %}
                     <li>
@@ -22,10 +22,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Copilot
-              <ol>
+            <li class="collapsible">Copilot
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Copilot" %}
                     <li>
@@ -33,10 +33,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Data
-              <ol>
+            <li class="collapsible">Data
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Data" %}
                     <li>
@@ -44,10 +44,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Infra
-              <ol>
+            <li class="collapsible">Infra
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Infra" %}
                     <li>
@@ -55,10 +55,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Security
-              <ol>
+            <li class="collapsible">Security
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Case Study" and file.sub-category == "Security" %}
                     <li>
@@ -66,14 +66,14 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
           </ul>
         </li>
-        <li>Comic
+        <li class="collapsible">Comic
           <ul>
-            <li>AI
-              <ol>
+            <li class="collapsible">AI
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "AI" %}
                     <li>
@@ -81,10 +81,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Copilot
-              <ol>
+            <li class="collapsible">Copilot
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Copilot" %}
                     <li>
@@ -92,10 +92,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Data
-              <ol>
+            <li class="collapsible">Data
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Data" %}
                     <li>
@@ -103,10 +103,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Infra
-              <ol>
+            <li class="collapsible">Infra
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Infra" %}
                     <li>
@@ -114,10 +114,10 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
-            <li>Security
-              <ol>
+            <li class="collapsible">Security
+              <ul>
                 {% for file in site.pages %}
                   {% if file.category == "Comic" and file.sub-category == "Security" %}
                     <li>
@@ -125,7 +125,7 @@
                     </li>
                   {% endif %}
                 {% endfor %}
-              </ol>
+              </ul>
             </li>
           </ul>
         </li>
@@ -165,6 +165,15 @@
       document.removeEventListener('mousemove', resize);
       document.removeEventListener('mouseup', stopResize);
     }
+
+    // Collapsible menu functionality
+    document.querySelectorAll('.collapsible > a').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parent = this.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
