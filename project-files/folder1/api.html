@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        .correct { color: green; }
+        .incorrect { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Quiz 1: After Panel 2</h2>
+    <p>What is the main benefit of using Azure API Management?</p>
+    <form id="quiz1">
+        <input type="radio" name="q1" value="A"> A) It helps manage APIs efficiently.<br>
+        <input type="radio" name="q1" value="B"> B) It increases the number of APIs.<br>
+        <input type="radio" name="q1" value="C"> C) It makes APIs slower.<br>
+        <button type="button" onclick="checkAnswer('quiz1', 'A')">Submit</button>
+    </form>
+    <p id="feedback1"></p>
+
+    <h2>Quiz 2: After Panel 4</h2>
+    <p>What can policies in APIM be used for?</p>
+    <form id="quiz2">
+        <input type="radio" name="q2" value="A"> A) To secure and optimize APIs.<br>
+        <input type="radio" name="q2" value="B"> B) To delete APIs.<br>
+        <input type="radio" name="q2" value="C"> C) To create new APIs.<br>
+        <button type="button" onclick="checkAnswer('quiz2', 'A')">Submit</button>
+    </form>
+    <p id="feedback2"></p>
+
+    <h2>Quiz 3: After Panel 5</h2>
+    <p>What does a rate-limiting policy do?</p>
+    <form id="quiz3">
+        <input type="radio" name="q3" value="A"> A) It limits the number of requests to prevent abuse.<br>
+        <input type="radio" name="q3" value="B"> B) It increases the number of requests.<br>
+        <input type="radio" name="q3" value="C"> C) It deletes requests.<br>
+        <button type="button" onclick="checkAnswer('quiz3', 'A')">Submit</button>
+    </form>
+    <p id="feedback3"></p>
+
+    <script>
+        function checkAnswer(quizId, correctAnswer) {
+            const form = document.getElementById(quizId);
+            const feedback = document.getElementById('feedback' + quizId.slice(-1));
+            const selected = form.querySelector('input[name="' + quizId.slice(-1) + '"]:checked');
+            if (selected) {
+                if (selected.value === correctAnswer) {
+                    feedback.textContent = "Correct!";
+                    feedback.className = "correct";
+                } else {
+                    feedback.textContent = "Incorrect. The correct answer is " + correctAnswer + ".";
+                    feedback.className = "incorrect";
+                }
+            } else {
+                feedback.textContent = "Please select an answer.";
+                feedback.className = "";
+            }
+        }
+    </script>
+</body>
+</html>
