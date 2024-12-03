@@ -44,3 +44,13 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+li > ul {
+    padding-left: 20px; /* Add padding to submenus */
+}
+li > a {
+    font-size: 16px; /* Default font size */
+}
+li > a.main-menu {
+    font-size: 18px; /* Increase font size by 2 points */
+    font-weight: bold; /* Make it bold */
+}
