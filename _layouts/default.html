@@ -1,24 +1,170 @@
----
-layout: default
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-
+  <link rel="stylesheet" href="/demo1/assets/css/style.css">
 </head>
 <body>
   <div class="container">
     <div class="resizable" id="leftDiv">
-      <!-- Your custom content -->
+      <ul style="list-style-type:none; padding-left: 5px;">
+        <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
+        <li>Case Study
+          <ul style="list-style-type:disc">
+            <li>AI
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Case Study" and file.sub-category == "AI" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Copilot
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Case Study" and file.sub-category == "Copilot" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Data
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Case Study" and file.sub-category == "Data" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Infra
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Case Study" and file.sub-category == "Infra" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Security
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Case Study" and file.sub-category == "Security" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li>Comic
+          <ul style="list-style-type:disc">
+            <li>AI
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Comic" and file.sub-category == "AI" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Copilot
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Comic" and file.sub-category == "Copilot" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Data
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Comic" and file.sub-category == "Data" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Infra
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Comic" and file.sub-category == "Infra" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+            <li>Security
+              <ol>
+                {% for file in site.pages %}
+                  {% if file.category == "Comic" and file.sub-category == "Security" %}
+                    <li>
+                      <a href="/demo1/{{ file.url }}">{{ file.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <div class="divider" id="divider"></div>
     <div class="resizable" id="rightDiv">
       {{ content }}
     </div>
   </div>
-  <!-- Your custom scripts -->
+
+  <script>
+    const divider = document.getElementById('divider');
+    const leftDiv = document.getElementById('leftDiv');
+    const rightDiv = document.getElementById('rightDiv');
+
+    let isResizing = false;
+
+    divider.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.addEventListener('mousemove', resize);
+      document.addEventListener('mouseup', stopResize);
+    });
+
+    function resize(e) {
+      if (isResizing) {
+        const containerOffsetLeft = document.querySelector('.container').offsetLeft;
+        const newLeftWidth = e.clientX - containerOffsetLeft;
+        const newRightWidth = document.querySelector('.container').clientWidth - newLeftWidth - divider.offsetWidth;
+        leftDiv.style.width = `${newLeftWidth}px`;
+        rightDiv.style.width = `${newRightWidth}px`;
+      }
+    }
+
+    function stopResize() {
+      isResizing = false;
+      document.removeEventListener('mousemove', resize);
+      document.removeEventListener('mouseup', stopResize);
+    }
+  </script>
 </body>
 </html>
