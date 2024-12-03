@@ -11,7 +11,7 @@ body {
     overflow: auto;
 }
 #leftDiv {
-    width: 250px; /* Increased width */
+    width: 250px;
     background-color: #f1f1f1;
     padding: 0;
 }
@@ -39,16 +39,4 @@ li a {
 li a:hover {
     background-color: #555;
     color: white;
-}
-li ul {
-    display: none; /* Hide submenus by default */
-}
-li.collapsible > a::after {
-    content: ' ▼'; /* Add a dropdown arrow */
-}
-li.collapsible.active > a::after {
-    content: ' ▲'; /* Change arrow direction when active */
-}
-li.collapsible.active ul {
-    display: block; /* Show submenu when active */
 }
