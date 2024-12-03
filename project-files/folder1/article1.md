@@ -13,8 +13,7 @@ Characters Intro: This is a conversation between Alice - a program manager and J
 
 Scene 1:
 
-![img](./mfa1.jpg)
-
+<img src="./mfa1.jpg" alt="img" width="800" height="350">
 
 Questions to Learners: How would you respond, if you were a security consultant?
 
