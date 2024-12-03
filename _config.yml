@@ -35,6 +35,9 @@ remote_theme: pages-themes/minimal
 plugins:
   - jekyll-remote-theme
 
+markdown: kramdown
+highlighter: rouge
+
 plugins:
   - jekyll-feed
   - jekyll-toc
