@@ -8,17 +8,16 @@ body {
     display: flex;
     width: 100%;
 }
-.resizable {
-    overflow: auto;
-}
 #leftDiv {
     width: 250px;
     background-color: #f1f1f1;
     padding: 10px;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 #rightDiv {
     flex-grow: 1;
     padding: 5px;
+    overflow: auto; /* Ensure content is scrollable if it overflows */
 }
 .divider {
     width: 3px;
