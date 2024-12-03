@@ -27,3 +27,21 @@ body {
 ul, ol {
     padding-left: 20px;
 }
+#leftDiv ul {
+    padding: 0;
+    list-style-type: none;
+}
+#leftDiv ul li {
+    width: 100%;
+    background-color: #f0f0f0;
+    margin-bottom: 5px;
+}
+#leftDiv ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+#leftDiv ul li a:hover {
+    background-color: #ddd;
+}
