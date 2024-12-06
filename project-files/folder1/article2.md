@@ -36,7 +36,7 @@ sub-category: "Data"
 
 What is the capital of France?
 
-<form>
+<form id="quizForm">
   <input type="radio" id="paris" name="capital" value="paris">
   <label for="paris">Paris</label><br>
   <input type="radio" id="london" name="capital" value="london">
@@ -45,4 +45,35 @@ What is the capital of France?
   <label for="berlin">Berlin</label><br>
   <input type="radio" id="madrid" name="capital" value="madrid">
   <label for="madrid">Madrid</label><br>
+  <button type="button" onclick="checkAnswer()">Submit</button>
 </form>
+
+<p id="result"></p>
+
+<script>
+  function checkAnswer() {
+    var radios = document.getElementsByName('capital');
+    var correctAnswer = 'paris';
+    var result = document.getElementById('result');
+    var selected = false;
+
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        selected = true;
+        if (radios[i].value === correctAnswer) {
+          result.textContent = 'Correct!';
+          result.style.color = 'green';
+        } else {
+          result.textContent = 'Incorrect. Try again!';
+          result.style.color = 'red';
+        }
+        break;
+      }
+    }
+
+    if (!selected) {
+      result.textContent = 'Please select an answer.';
+      result.style.color = 'orange';
+    }
+  }
+</script>
