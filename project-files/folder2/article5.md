@@ -8,14 +8,11 @@ sub-category: "Security"
 
 This is a test article
 
-### Section 1
 ## Scene 1: Introduction to Azure Front Door
 
 !Azure Front Door Superhero
 
 **Meet Azure Front Door, your superhero for fast, reliable, and secure web content delivery!**
-
-<img src="./mfa1.jpg" alt="img" width="800" height="350">
 
 ### What is Azure Front Door?
 <select id="quiz-dropdown-1" onchange="checkAnswer1()" class="styled-dropdown">
@@ -40,13 +37,48 @@ This is a test article
   }
 </script>
 
+<style>
+  .styled-dropdown {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .styled-dropdown:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+
+  details summary {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  details[open] summary::after {
+    content: "▲";
+    float: right;
+  }
+
+  details summary::after {
+    content: "▼";
+    float: right;
+  }
+</style>
+
+
 ## Scene 2: Benefits of Azure Front Door
 
 !Azure Front Door Flying
 
 **Azure Front Door ensures your content is delivered quickly and securely, no matter where your users are!**
-
-<img src="./mfa1.jpg" alt="img" width="800" height="350">
 
 ### Arrange the benefits of Azure Front Door in the correct order:
 <ul id="sortable-benefits" class="styled-list">
@@ -60,6 +92,10 @@ This is a test article
 <button onclick="helpMeBenefits()">Help me</button>
 
 <p id="feedback-benefits"></p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <script>
   $(function() {
@@ -95,14 +131,57 @@ This is a test article
   }
 </script>
 
+<style>
+  .styled-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 300px;
+  }
+
+  .styled-list li {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    cursor: move;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .styled-list li:hover {
+    background-color: #e9e9e9;
+  }
+
+  button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #feedback-benefits {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+</style>
 
 ## Scene 3: How Azure Front Door Works
 
 !Azure Front Door Control Panel
 
 **Azure Front Door uses intelligent routing to manage traffic and ensure optimal performance.**
-
-<img src="./mfa1.jpg" alt="img" width="800" height="350">
 
 ### Select the correct routing method used by Azure Front Door:
 <select id="quiz-dropdown-2" onchange="checkAnswer2()" class="styled-dropdown">
