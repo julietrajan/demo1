@@ -45,7 +45,7 @@ What is the capital of France?
   <label for="berlin">Berlin</label><br>
   <input type="radio" id="madrid" name="capital" value="madrid">
   <label for="madrid">Madrid</label><br>
-  <button type="button" onclick="checkAnswer()">Submit</button>
+  <button type="button" onclick="checkAnswer()" class="styled-button">Submit</button>
 </form>
 
 <p id="result"></p>
@@ -77,3 +77,23 @@ What is the capital of France?
     }
   }
 </script>
+
+<style>
+  .styled-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+
+  .styled-button:hover {
+    background-color: #45a049;
+  }
+</style>
