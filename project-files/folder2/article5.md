@@ -78,6 +78,7 @@ This is a test article
 ## Scene 2: Benefits of Azure Front Door
 
 **Let's set up Azure Front Door step by step!**
+<br>
 <a href="./2.jpeg" download>
   <img src="./2.jpeg" alt="Digital and App Innovation">
 </a>
@@ -90,10 +91,10 @@ This is a test article
   <li class="ui-state-default" data-order="4">Set up health probes</li>
 </ul>
 
-<button onclick="checkOrderBenefits()">Check Order</button>
-<button onclick="helpMeBenefits()">Help me</button>
+<button onclick="checkOrderSetup()">Check Order</button>
+<button onclick="helpMeSetup()">Help me</button>
 
-<p id="feedback-benefits"></p>
+<p id="feedback-setup"></p>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -101,19 +102,19 @@ This is a test article
 
 <script>
   $(function() {
-    $("#sortable-benefits").sortable();
-    $("#sortable-benefits").disableSelection();
+    $("#sortable-setup").sortable();
+    $("#sortable-setup").disableSelection();
   });
 
-  function checkOrderBenefits() {
-    var items = $("#sortable-benefits li");
+  function checkOrderSetup() {
+    var items = $("#sortable-setup li");
     var correct = true;
     items.each(function(index) {
       if ($(this).data("order") !== index + 1) {
         correct = false;
       }
     });
-    var feedback = document.getElementById("feedback-benefits");
+    var feedback = document.getElementById("feedback-setup");
     if (correct) {
       feedback.textContent = "Correct order!";
       feedback.style.color = "green";
@@ -123,13 +124,13 @@ This is a test article
     }
   }
 
-  function helpMeBenefits() {
-    var items = $("#sortable-benefits li").sort(function(a, b) {
+  function helpMeSetup() {
+    var items = $("#sortable-setup li").sort(function(a, b) {
       return $(a).data("order") - $(b).data("order");
     });
-    $("#sortable-benefits").html(items);
-    document.getElementById("feedback-benefits").textContent = "Here is the correct order.";
-    document.getElementById("feedback-benefits").style.color = "blue";
+    $("#sortable-setup").html(items);
+    document.getElementById("feedback-setup").textContent = "Here is the correct order.";
+    document.getElementById("feedback-setup").style.color = "blue";
   }
 </script>
 
@@ -173,7 +174,7 @@ This is a test article
     background-color: #0056b3;
   }
 
-  #feedback-benefits {
+  #feedback-setup {
     margin-top: 10px;
     font-size: 16px;
   }
