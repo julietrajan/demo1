@@ -31,3 +31,18 @@ sub-category: "Data"
 - [ ] C) It deletes requests.
 
 **Correct Answer:** A
+
+## Sample Question
+
+What is the capital of France?
+
+<form>
+  <input type="radio" id="paris" name="capital" value="paris">
+  <label for="paris">Paris</label><br>
+  <input type="radio" id="london" name="capital" value="london">
+  <label for="london">London</label><br>
+  <input type="radio" id="berlin" name="capital" value="berlin">
+  <label for="berlin">Berlin</label><br>
+  <input type="radio" id="madrid" name="capital" value="madrid">
+  <label for="madrid">Madrid</label><br>
+</form>
