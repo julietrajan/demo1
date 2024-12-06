@@ -11,7 +11,9 @@ This is a test article
 ## Scene 1: Introduction to Azure Front Door
 
 **Meet Azure Front Door, your superhero for fast, reliable, and secure web content delivery!**
-<img src="./1.png" alt="img">
+<a href="./1.png" download>
+  <img src="./1.png" alt="Digital and App Innovation">
+</a>
 
 ### What is Azure Front Door?
 <select id="quiz-dropdown-1" onchange="checkAnswer1()" class="styled-dropdown">
@@ -76,7 +78,9 @@ This is a test article
 ## Scene 2: Benefits of Azure Front Door
 
 **Let's set up Azure Front Door step by step!**
-<img src="./2.jpeg" alt="img">
+<a href="./2.jpeg" download>
+  <img src="./2.jpeg" alt="Digital and App Innovation">
+</a>
 
 ### Arrange the steps to set up Azure Front Door in the correct order:
 <ul id="sortable-setup" class="styled-list">
@@ -178,7 +182,9 @@ This is a test article
 ## Scene 3: How Azure Front Door Works
 
 **Azure Front Door uses intelligent routing to manage traffic and ensure optimal performance.**
-<img src="./3.png" alt="img">
+<a href="./3.png" download>
+  <img src="./3.png" alt="Digital and App Innovation">
+</a>
 
 ### Select the correct routing method used by Azure Front Door:
 <select id="quiz-dropdown-2" onchange="checkAnswer2()" class="styled-dropdown">
