@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Article 4"
+title:  "Article 5"
 category: "Comic"
 sub-category: "Security"
 ---
@@ -10,9 +10,8 @@ This is a test article
 
 ## Scene 1: Introduction to Azure Front Door
 
-!Azure Front Door Superhero
-
 **Meet Azure Front Door, your superhero for fast, reliable, and secure web content delivery!**
+<img src="./1.png" alt="img">
 
 ### What is Azure Front Door?
 <select id="quiz-dropdown-1" onchange="checkAnswer1()" class="styled-dropdown">
@@ -76,16 +75,15 @@ This is a test article
 
 ## Scene 2: Benefits of Azure Front Door
 
-!Azure Front Door Flying
+**Let's set up Azure Front Door step by step!**
+<img src="./2.jpeg" alt="img">
 
-**Azure Front Door ensures your content is delivered quickly and securely, no matter where your users are!**
-
-### Arrange the benefits of Azure Front Door in the correct order:
-<ul id="sortable-benefits" class="styled-list">
-  <li class="ui-state-default" data-order="1">High availability</li>
-  <li class="ui-state-default" data-order="2">Reduced latency</li>
-  <li class="ui-state-default" data-order="3">Increased scalability</li>
-  <li class="ui-state-default" data-order="4">Improved security</li>
+### Arrange the steps to set up Azure Front Door in the correct order:
+<ul id="sortable-setup" class="styled-list">
+  <li class="ui-state-default" data-order="1">Create a Front Door profile</li>
+  <li class="ui-state-default" data-order="2">Add backend pools</li>
+  <li class="ui-state-default" data-order="3">Configure routing rules</li>
+  <li class="ui-state-default" data-order="4">Set up health probes</li>
 </ul>
 
 <button onclick="checkOrderBenefits()">Check Order</button>
@@ -179,9 +177,8 @@ This is a test article
 
 ## Scene 3: How Azure Front Door Works
 
-!Azure Front Door Control Panel
-
 **Azure Front Door uses intelligent routing to manage traffic and ensure optimal performance.**
+<img src="./3.png" alt="img">
 
 ### Select the correct routing method used by Azure Front Door:
 <select id="quiz-dropdown-2" onchange="checkAnswer2()" class="styled-dropdown">
