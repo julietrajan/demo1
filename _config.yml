@@ -36,6 +36,8 @@ plugins:
   - jekyll-remote-theme
 
 markdown: kramdown
+kramdown:
+  input: GFM
 highlighter: rouge
 
 plugins:
