@@ -79,6 +79,11 @@ Characters Intro: This is a conversation between Alice - a program manager and J
     <div class="cell"><input maxlength="1" data-answer="O"></div>
     <div class="cell"><input maxlength="1" data-answer="S"></div>
     <div class="cell"><input maxlength="1" data-answer="C"></div>
+    <div class="cell"><input maxlength="1" data-answer="A"></div>
+    <div class="cell"><input maxlength="1" data-answer="L"></div>
+    <div class="cell"><input maxlength="1" data-answer="I"></div>
+    <div class="cell"><input maxlength="1" data-answer="N"></div>
+    <div class="cell"><input maxlength="1" data-answer="G"></div>
 
     <!-- Row 2 -->
     <div class="cell"></div>
@@ -124,6 +129,8 @@ Characters Intro: This is a conversation between Alice - a program manager and J
     <div class="cell"><input maxlength="1" data-answer="D"><span class="clue-number">6</span></div>
     <div class="cell"><input maxlength="1" data-answer="A"></div>
     <div class="cell"><input maxlength="1" data-answer="T"></div>
+    <div class="cell"><input maxlength="1" data-answer="A"></div>
+    <div class="cell"><input maxlength="1" data-answer="B"></div>
     <div class="cell"><input maxlength="1" data-answer="A"></div>
     <div class="cell"><input maxlength="1" data-answer="S"></div>
     <div class="cell"><input maxlength="1" data-answer="E"></div>
