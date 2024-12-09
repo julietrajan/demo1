@@ -11,34 +11,57 @@ Tips for Trainers: Play this comic-style play, scene-by-scene, while asking ques
 Characters Intro: This is a conversation between Alice - a program manager and John - a security consultant, over the mandatory multifactor authentication for Azure Sign-in in Contoso.
 
 
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Crossword Puzzle</title>
+    <title>Styled Crossword Puzzle</title>
     <style>
         table {
             border-collapse: collapse;
+            margin: 20px auto;
         }
         td {
-            border: 1px solid black;
-            width: 30px;
-            height: 30px;
+            border: 2px solid #333; /* Darker border */
+            width: 40px; /* Larger cells */
+            height: 40px;
             text-align: center;
+            background-color: #f9f9f9; /* Light grey background */
         }
         input {
             width: 100%;
             height: 100%;
             text-align: center;
             border: none;
+            font-size: 18px; /* Larger font size */
+            font-weight: bold; /* Bold text */
+            background-color: transparent;
         }
         .incorrect {
-            background-color: red;
+            background-color: #ffcccc; /* Light red background for incorrect answers */
+        }
+        .correct {
+            background-color: #ccffcc; /* Light green background for correct answers */
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Simple Crossword Puzzle</h1>
+    <h1 style="text-align: center;">Styled Crossword Puzzle</h1>
 
     <table>
         <tr>
@@ -121,7 +144,9 @@ Characters Intro: This is a conversation between Alice - a program manager and J
                 const input = document.getElementById(id);
                 if (input.value.toUpperCase() !== answers[id]) {
                     input.classList.add("incorrect");
+                    input.classList.remove("correct");
                 } else {
+                    input.classList.add("correct");
                     input.classList.remove("incorrect");
                 }
             }
@@ -132,6 +157,7 @@ Characters Intro: This is a conversation between Alice - a program manager and J
                 const input = document.getElementById(id);
                 input.value = answers[id];
                 input.classList.remove("incorrect");
+                input.classList.add("correct");
             }
         }
     </script>
