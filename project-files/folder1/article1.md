@@ -73,45 +73,44 @@ Characters Intro: This is a conversation between Alice - a program manager and J
     <div class="cell"><input maxlength="1" data-answer="Q"></div>
     <div class="cell"><input maxlength="1" data-answer="L"></div>
     <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"><input maxlength="1" data-answer="S"><span class="clue-number">3</span></div>
-    <div class="cell"><input maxlength="1" data-answer="P"></div>
-    <div class="cell"><input maxlength="1" data-answer="A"></div>
-    <div class="cell"><input maxlength="1" data-answer="R"></div>
-    
+    <div class="cell"><input maxlength="1" data-answer="A"><span class="clue-number">2</span></div>
+    <div class="cell"><input maxlength="1" data-answer="U"></div>
+    <div class="cell"><input maxlength="1" data-answer="T"></div>
+    <div class="cell"><input maxlength="1" data-answer="O"></div>
+    <div class="cell"><input maxlength="1" data-answer="S"></div>
+    <div class="cell"><input maxlength="1" data-answer="C"></div>
+
     <!-- Row 2 -->
-    <div class="cell"><input maxlength="1" data-answer="N"><span class="clue-number">1</span></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"><input maxlength="1" data-answer="N"><span class="clue-number">3</span></div>
     <div class="cell"><input maxlength="1" data-answer="O"></div>
     <div class="cell"><input maxlength="1" data-answer="T"></div>
     <div class="cell"><input maxlength="1" data-answer="E"></div>
     <div class="cell"><input maxlength="1" data-answer="B"></div>
-
     <div class="cell"><input maxlength="1" data-answer="O"></div>
     <div class="cell"><input maxlength="1" data-answer="O"></div>
     <div class="cell"><input maxlength="1" data-answer="K"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
 
     <!-- Row 3 -->
-    <div class="cell"><input maxlength="1" data-answer="B"><span class="clue-number">5</span></div>
-    <div class="cell"><input maxlength="1" data-answer="L"></div>
-    <div class="cell"><input maxlength="1" data-answer="O"></div>
-    <div class="cell"><input maxlength="1" data-answer="B"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
+    <div class="cell"><input maxlength="1" data-answer="B"><span class="clue-number">4</span></div>
+    <div class="cell"><input maxlength="1" data-answer="I"></div>
+    <div class="cell"><input maxlength="1" data-answer="G"></div>
+    <div class="cell"><input maxlength="1" data-answer="D"></div>
+    <div class="cell"><input maxlength="1" data-answer="A"></div>
+    <div class="cell"><input maxlength="1" data-answer="T"></div>
+    <div class="cell"><input maxlength="1" data-answer="A"></div>
     <div class="cell"></div>
     <div class="cell"></div>
     <div class="cell"></div>
 
     <!-- Row 4 -->
     <div class="cell"></div>
-    <div class="cell"><input maxlength="1" data-answer="B"><span class="clue-number">2</span></div>
-    <div class="cell"><input maxlength="1" data-answer="I"></div>
-    <div class="cell"><input maxlength="1" data-answer="G"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
+    <div class="cell"><input maxlength="1" data-answer="S"><span class="clue-number">5</span></div>
+    <div class="cell"><input maxlength="1" data-answer="P"></div>
+    <div class="cell"><input maxlength="1" data-answer="A"></div>
+    <div class="cell"><input maxlength="1" data-answer="R"></div>
+    <div class="cell"><input maxlength="1" data-answer="K"></div>
     <div class="cell"></div>
     <div class="cell"></div>
     <div class="cell"></div>
@@ -122,36 +121,12 @@ Characters Intro: This is a conversation between Alice - a program manager and J
     <div class="cell"></div>
     <div class="cell"></div>
     <div class="cell"></div>
-    <div class="cell"><input maxlength="1" data-answer="A"><span class="clue-number">4</span></div>
-    <div class="cell"><input maxlength="1" data-answer="U"></div>
-    <div class="cell"><input maxlength="1" data-answer="T"></div>
-    <div class="cell"><input maxlength="1" data-answer="O"></div>
-    <div class="cell"><input maxlength="1" data-answer="S"></div>
-    <div class="cell"></div>
-
-    <!-- Row 6 -->
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"><input maxlength="1" data-answer="S"><span class="clue-number">6</span></div>
-    <div class="cell"><input maxlength="1" data-answer="E"></div>
-    <div class="cell"><input maxlength="1" data-answer="R"></div>
-    <div class="cell"><input maxlength="1" data-answer="V"></div>
-    <div class="cell"><input maxlength="1" data-answer="E"></div>
-
-    <!-- Row 7 -->
-    <div class="cell"><input maxlength="1" data-answer="D"><span class="clue-number">7</span></div>
+    <div class="cell"><input maxlength="1" data-answer="D"><span class="clue-number">6</span></div>
     <div class="cell"><input maxlength="1" data-answer="A"></div>
     <div class="cell"><input maxlength="1" data-answer="T"></div>
     <div class="cell"><input maxlength="1" data-answer="A"></div>
     <div class="cell"><input maxlength="1" data-answer="S"></div>
     <div class="cell"><input maxlength="1" data-answer="E"></div>
-    <div class="cell"><input maxlength="1" data-answer="T"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
   </div>
 
   <div class="buttons">
@@ -162,17 +137,15 @@ Characters Intro: This is a conversation between Alice - a program manager and J
   <h2>Clues</h2>
   <h3>Across</h3>
   <ul>
-    <li><strong>1:</strong> The language used for querying data in Azure Synapse Analytics. (<strong>SQL</strong>)</li>
-    <li><strong>3:</strong> A feature in Azure Synapse that allows for real-time data processing. (<strong>Spark</strong>)</li>
-    <li><strong>5:</strong> The type of storage used by Azure Synapse for data warehousing. (<strong>Blob</strong>)</li>
-    <li><strong>7:</strong> Feature which is a named view of data that simply points or references the data you want to use in your (<strong>Dataset</strong>)</li>
+    <li><strong>1:</strong> The language used for querying data in Azure Synapse Analytics. (SQL)</li>
+    <li><strong>2:</strong> Synapse Spark Pool feature for scaling nodes based on demand. (Autoscaling)</li>
+    <li><strong>3:</strong> Interactive way to write code for data analysis. (Notebook)</li>
   </ul>
   <h3>Down</h3>
   <ul>
-    <li><strong>1:</strong> Interactive way to write a code to analyze and transform data. (<strong>Notebook</strong>)</li>
-    <li><strong>2:</strong> The type of analytics that Azure Synapse is primarily used for. (<strong>Big Data</strong>)</li>
-    <li><strong>4:</strong> Synapse spark pool feature which increases and decreases the number of nodes depending on demand. (<strong>Autoscaling</strong>)</li>
-    <li><strong>6:</strong> The type of pool used for on-demand SQL queries in Azure Synapse. (<strong>Serverless</strong>)</li>
+    <li><strong>4:</strong> The type of analytics that Azure Synapse is primarily used for. (Big Data)</li>
+    <li><strong>5:</strong> A feature in Azure Synapse for real-time data processing. (Spark)</li>
+    <li><strong>6:</strong> A named view of data that points to data you want to use. (Dataset)</li>
   </ul>
 
   <script>
@@ -199,4 +172,3 @@ Characters Intro: This is a conversation between Alice - a program manager and J
   </script>
 </body>
 </html>
-
