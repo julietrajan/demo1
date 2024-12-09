@@ -10,7 +10,7 @@ Tips for Trainers: Play this comic-style play, scene-by-scene, while asking ques
 
 Characters Intro: This is a conversation between Alice - a program manager and John - a security consultant, over the mandatory multifactor authentication for Azure Sign-in in Contoso.
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
