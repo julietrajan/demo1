@@ -367,8 +367,9 @@ To address the challenges of dispersed information, user experience, and securit
   }
 </script>
 
-## Azure Services Validation1
+## Azure Services Validation2
 
+{% raw %}
 <form id="validation-form">
   <div class="service-row">
     <select name="service" class="service-dropdown">
@@ -440,3 +441,4 @@ To address the challenges of dispersed information, user experience, and securit
     resultElement.className = 'result correct';
   }
 </script>
+{% endraw %}
