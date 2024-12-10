@@ -10,10 +10,6 @@ This is a test article
 
 ## Scene 1: Introduction to Azure Front Door
 
-**Meet Azure Front Door, your superhero for fast, reliable, and secure web content delivery!**
-<a href="./1.png" download>
-  <img src="./1.png" alt="Digital and App Innovation">
-</a>
 
 ### What is Azure Front Door?
 <select id="quiz-dropdown-1" onchange="checkAnswer1()" class="styled-dropdown">
@@ -79,9 +75,6 @@ This is a test article
 
 **Let's set up Azure Front Door step by step!**
 <br>
-<a href="./2.jpeg" download>
-  <img src="./2.jpeg" alt="Digital and App Innovation">
-</a>
 
 ### Arrange the steps to set up Azure Front Door in the correct order:
 <ul id="sortable-setup" class="styled-list">
@@ -374,8 +367,8 @@ To address the challenges of dispersed information, user experience, and securit
   }
 </script>
 
-## Azure Services Validation
-{% raw %}
+## Azure Services Validation1
+
 <form id="validation-form">
   <div class="service-row">
     <select name="service" class="service-dropdown">
@@ -447,4 +440,3 @@ To address the challenges of dispersed information, user experience, and securit
     resultElement.className = 'result correct';
   }
 </script>
-{% endraw %}
