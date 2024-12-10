@@ -270,16 +270,16 @@ This is a test article
 To address the challenges of dispersed information, user experience, and security, which Azure services should Ben use? Select all that apply.
 
 <form id="quiz-form">
-  <label><input type="checkbox" name="service" value="1"> Azure AI Cognitive Service Account</label><br>
-  <label><input type="checkbox" name="service" value="2"> Azure OpenAI Service</label><br>
-  <label><input type="checkbox" name="service" value="3"> Azure AI Search</label><br>
-  <label><input type="checkbox" name="service" value="4"> Azure AI Document Intelligence</label><br>
-  <label><input type="checkbox" name="service" value="5"> Azure AI Bot Service</label><br>
-  <label><input type="checkbox" name="service" value="6"> Private Endpoint</label><br>
-  <label><input type="checkbox" name="service" value="7"> Azure SQL Database</label><br>
-  <label><input type="checkbox" name="service" value="8"> Azure DevOps</label><br>
-  <label><input type="checkbox" name="service" value="9"> Azure Machine Learning</label><br>
-  <label><input type="checkbox" name="service" value="10"> Managed Identity</label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="1"> Azure AI Cognitive Service Account<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="2"> Azure OpenAI Service<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="3"> Azure AI Search<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="4"> Azure AI Document Intelligence<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="5"> Azure AI Bot Service<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="6"> Private Endpoint<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="7"> Azure SQL Database<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="8"> Azure DevOps<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="9"> Azure Machine Learning<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="10"> Managed Identity<span class="checkmark"></span></label><br>
   <br>
   <button type="button" onclick="checkAnswers()">Check Answer</button>
   <button type="button" onclick="showAnswers()">Help Me</button>
@@ -287,20 +287,89 @@ To address the challenges of dispersed information, user experience, and securit
 
 <p id="result"></p>
 
+<style>
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+  }
+
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  #result {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  #result.correct {
+    color: blue;
+  }
+
+  #result.incorrect {
+    color: red;
+  }
+</style>
+
 <script>
   const correctAnswers = [2, 3, 5, 6, 10];
 
   function checkAnswers() {
     const selected = Array.from(document.querySelectorAll('input[name="service"]:checked')).map(cb => parseInt(cb.value));
     const isCorrect = correctAnswers.every(val => selected.includes(val)) && selected.length === correctAnswers.length;
-    document.getElementById('result').innerText = isCorrect ? 'Correct' : 'Try again';
+    const resultElement = document.getElementById('result');
+    resultElement.innerText = isCorrect ? 'Correct' : 'Try again';
+    resultElement.className = isCorrect ? 'correct' : 'incorrect';
   }
 
   function showAnswers() {
     document.querySelectorAll('input[name="service"]').forEach(cb => {
       cb.checked = correctAnswers.includes(parseInt(cb.value));
     });
+    const resultElement = document.getElementById('result');
+    resultElement.innerText = 'This is the correct order';
+    resultElement.className = 'correct';
   }
 </script>
-
-
