@@ -365,63 +365,16 @@ To address the challenges of dispersed information, user experience, and securit
   }
 </script>
 
-## Azure Services Validation
+## Azure Services Validation 3
 
-<form id="validation-form">
-  <div class="service-row">
-    <select name="service" class="service-dropdown">
-      <option value="Azure AI Search">Azure AI Search</option>
-      <option value="Azure OpenAI">Azure OpenAI</option>
-      <option value="Azure AI Bot Service">Azure AI Bot Service</option>
-    </select>
-    <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
-    <button type="button" onclick="validateAnswer(this)">Validate</button>
-    <span class="result"></span>
-  </div>
-  <div class="service-row">
-    <select name="service" class="service-dropdown">
-      <option value="Azure AI Search">Azure AI Search</option>
-      <option value="Azure OpenAI">Azure OpenAI</option>
-      <option value="Azure AI Bot Service">Azure AI Bot Service</option>
-    </select>
-    <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
-    <button type="button" onclick="validateAnswer(this)">Validate</button>
-    <span class="result"></span>
-  </div>
-  <div class="service-row">
-    <select name="service" class="service-dropdown">
-      <option value="Azure AI Search">Azure AI Search</option>
-      <option value="Azure OpenAI">Azure OpenAI</option>
-      <option value="Azure AI Bot Service">Azure AI Bot Service</option>
-    </select>
-    <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
-    <button type="button" onclick="validateAnswer(this)">Validate</button>
-    <span class="result"></span>
-  </div>
-</form>
-
-<style>
-  .service-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  .service-dropdown {
-    margin-right: 10px;
-  }
-  .service-textarea {
-    margin-right: 10px;
-    width: 300px;
-    height: 50px;
-  }
-  .result {
-    font-size: 16px;
-    margin-left: 10px;
-  }
-  .result.correct {
-    color: blue;
-  }
-</style>
+<select id="quiz-dropdown-1" class="styled-dropdown">
+  <option value="1">Azure AI Search</option>
+  <option value="2">Azure OpenAI</option>
+  <option value="3">Azure Bot Service</option>
+</select>
+  <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
+  <button type="button" onclick="validateAnswer(this)">Validate</button>
+<p id="feedback-1"></p>
 
 <script>
   const correctAnswers = {
@@ -432,7 +385,7 @@ To address the challenges of dispersed information, user experience, and securit
 
   function validateAnswer(button) {
     const row = button.closest('.service-row');
-    const service = row.querySelector('.service-dropdown').value;
+    const service = row.querySelector('.quiz-dropdown-1').value;
     const resultElement = row.querySelector('.result');
     resultElement.innerText = correctAnswers[service];
     resultElement.className = 'result correct';
