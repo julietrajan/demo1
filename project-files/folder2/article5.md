@@ -266,3 +266,41 @@ This is a test article
   }
 </script>
 
+## Question 1
+To address the challenges of dispersed information, user experience, and security, which Azure services should Ben use? Select all that apply.
+
+<form id="quiz-form">
+  <label><input type="checkbox" name="service" value="1"> Azure AI Cognitive Service Account</label><br>
+  <label><input type="checkbox" name="service" value="2"> Azure OpenAI Service</label><br>
+  <label><input type="checkbox" name="service" value="3"> Azure AI Search</label><br>
+  <label><input type="checkbox" name="service" value="4"> Azure AI Document Intelligence</label><br>
+  <label><input type="checkbox" name="service" value="5"> Azure AI Bot Service</label><br>
+  <label><input type="checkbox" name="service" value="6"> Private Endpoint</label><br>
+  <label><input type="checkbox" name="service" value="7"> Azure SQL Database</label><br>
+  <label><input type="checkbox" name="service" value="8"> Azure DevOps</label><br>
+  <label><input type="checkbox" name="service" value="9"> Azure Machine Learning</label><br>
+  <label><input type="checkbox" name="service" value="10"> Managed Identity</label><br>
+  <br>
+  <button type="button" onclick="checkAnswers()">Check Answer</button>
+  <button type="button" onclick="showAnswers()">Help Me</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  const correctAnswers = [2, 3, 5, 6, 10];
+
+  function checkAnswers() {
+    const selected = Array.from(document.querySelectorAll('input[name="service"]:checked')).map(cb => parseInt(cb.value));
+    const isCorrect = correctAnswers.every(val => selected.includes(val)) && selected.length === correctAnswers.length;
+    document.getElementById('result').innerText = isCorrect ? 'Correct' : 'Try again';
+  }
+
+  function showAnswers() {
+    document.querySelectorAll('input[name="service"]').forEach(cb => {
+      cb.checked = correctAnswers.includes(parseInt(cb.value));
+    });
+  }
+</script>
+
+
