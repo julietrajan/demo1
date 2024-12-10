@@ -373,3 +373,77 @@ To address the challenges of dispersed information, user experience, and securit
     resultElement.className = 'correct';
   }
 </script>
+
+## Azure Services Validation
+
+<form id="validation-form">
+  <div class="service-row">
+    <select name="service" class="service-dropdown">
+      <option value="Azure AI Search">Azure AI Search</option>
+      <option value="Azure OpenAI">Azure OpenAI</option>
+      <option value="Azure AI Bot Service">Azure AI Bot Service</option>
+    </select>
+    <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
+    <button type="button" onclick="validateAnswer(this)">Validate</button>
+    <span class="result"></span>
+  </div>
+  <div class="service-row">
+    <select name="service" class="service-dropdown">
+      <option value="Azure AI Search">Azure AI Search</option>
+      <option value="Azure OpenAI">Azure OpenAI</option>
+      <option value="Azure AI Bot Service">Azure AI Bot Service</option>
+    </select>
+    <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
+    <button type="button" onclick="validateAnswer(this)">Validate</button>
+    <span class="result"></span>
+  </div>
+  <div class="service-row">
+    <select name="service" class="service-dropdown">
+      <option value="Azure AI Search">Azure AI Search</option>
+      <option value="Azure OpenAI">Azure OpenAI</option>
+      <option value="Azure AI Bot Service">Azure AI Bot Service</option>
+    </select>
+    <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
+    <button type="button" onclick="validateAnswer(this)">Validate</button>
+    <span class="result"></span>
+  </div>
+</form>
+
+<style>
+  .service-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .service-dropdown {
+    margin-right: 10px;
+  }
+  .service-textarea {
+    margin-right: 10px;
+    width: 300px;
+    height: 50px;
+  }
+  .result {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  .result.correct {
+    color: blue;
+  }
+</style>
+
+<script>
+  const correctAnswers = {
+    "Azure AI Search": "Efficient Query Processing: Optimized for fast and efficient query processing, ensuring quick response times.",
+    "Azure OpenAI": "Diverse Models: Models can be used for content generation, summarization, semantic search, natural language to code translation, and more.",
+    "Azure AI Bot Service": "Integrated Development Environment: Low-Code and No-Code Options, Offers various templates for different bot scenarios, including Q&A, customer service, and more, to speed up development."
+  };
+
+  function validateAnswer(button) {
+    const row = button.closest('.service-row');
+    const service = row.querySelector('.service-dropdown').value;
+    const resultElement = row.querySelector('.result');
+    resultElement.innerText = correctAnswers[service];
+    resultElement.className = 'result correct';
+  }
+</script>
