@@ -429,10 +429,24 @@ To address the challenges of dispersed information, user experience, and securit
   };
 
   function validateAnswer(dropdownId, feedbackId) {
-    const dropdown = document.getElementById(dropdownId);
-    const service = dropdown.value;
-    const resultElement = document.getElementById(feedbackId);
-    resultElement.innerText = correctAnswers[service];
-    resultElement.className = 'result correct';
+
+
+var dropdown = document.getElementById(dropdownId);
+    var feedback = document.getElementById(feedbackId);
+    if (dropdown.value === "Azure AI Search") {
+      feedback.textContent = correctAnswers["Azure AI Search"];
+      feedback.style.color = "green";
+    } 
+
+      if (dropdown.value === "Azure OpenAI") {
+      feedback.textContent = correctAnswers["Azure OpenAI"];
+      feedback.style.color = "green";
+  }
+
+     if (dropdown.value === "Azure AI Bot Service") {
+      feedback.textContent = correctAnswers["Azure AI Bot Service"];
+      feedback.style.color = "green";
+  }
+    
   }
 </script>
