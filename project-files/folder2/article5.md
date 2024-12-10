@@ -364,7 +364,9 @@ To address the challenges of dispersed information, user experience, and securit
     resultElement.className = 'correct';
   }
 </script>
-## Azure Services Validation 4
+
+## Azure Services Validation 5
+
 <div class="service-row">
   <select id="quiz-dropdown-1" class="styled-dropdown">
     <option value="Azure AI Search">Azure AI Search</option>
@@ -372,8 +374,8 @@ To address the challenges of dispersed information, user experience, and securit
     <option value="Azure AI Bot Service">Azure AI Bot Service</option>
   </select>
   <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
-  <button type="button" onclick="validateAnswer(this, 'quiz-dropdown-1', 'feedback-1')">Validate</button>
-  <p id="feedback-1" class="result"></p>
+  <button type="button" onclick="validateAnswer('quiz-dropdown-1', 'feedback-1')">Validate</button>
+  <span id="feedback-1" class="result"></span>
 </div>
 <div class="service-row">
   <select id="quiz-dropdown-2" class="styled-dropdown">
@@ -382,8 +384,8 @@ To address the challenges of dispersed information, user experience, and securit
     <option value="Azure AI Bot Service">Azure AI Bot Service</option>
   </select>
   <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
-  <button type="button" onclick="validateAnswer(this, 'quiz-dropdown-2', 'feedback-2')">Validate</button>
-  <p id="feedback-2" class="result"></p>
+  <button type="button" onclick="validateAnswer('quiz-dropdown-2', 'feedback-2')">Validate</button>
+  <span id="feedback-2" class="result"></span>
 </div>
 <div class="service-row">
   <select id="quiz-dropdown-3" class="styled-dropdown">
@@ -392,8 +394,8 @@ To address the challenges of dispersed information, user experience, and securit
     <option value="Azure AI Bot Service">Azure AI Bot Service</option>
   </select>
   <textarea name="answer" class="service-textarea" placeholder="Enter your answer here..."></textarea>
-  <button type="button" onclick="validateAnswer(this, 'quiz-dropdown-3', 'feedback-3')">Validate</button>
-  <p id="feedback-3" class="result"></p>
+  <button type="button" onclick="validateAnswer('quiz-dropdown-3', 'feedback-3')">Validate</button>
+  <span id="feedback-3" class="result"></span>
 </div>
 
 <style>
@@ -426,7 +428,7 @@ To address the challenges of dispersed information, user experience, and securit
     "Azure AI Bot Service": "Integrated Development Environment: Low-Code and No-Code Options, Offers various templates for different bot scenarios, including Q&A, customer service, and more, to speed up development."
   };
 
-  function validateAnswer(button, dropdownId, feedbackId) {
+  function validateAnswer(dropdownId, feedbackId) {
     const dropdown = document.getElementById(dropdownId);
     const service = dropdown.value;
     const resultElement = document.getElementById(feedbackId);
