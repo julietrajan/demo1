@@ -74,7 +74,7 @@ This is a test article
   }
 </style>
 
-
+<!--
 ## Scene 2: Benefits of Azure Front Door
 
 **Let's set up Azure Front Door step by step!**
@@ -133,7 +133,7 @@ This is a test article
     document.getElementById("feedback-setup").style.color = "blue";
   }
 </script>
-
+-->
 <style>
   .styled-list {
     list-style-type: none;
@@ -211,9 +211,9 @@ This is a test article
 </script>
 
 
-Question 2: Below are the tasks involved in the implementation phase. They are currently out of order. Please reorder them correctly.
+**Question 2: Below are the tasks involved in the implementation phase. They are currently out of order. Please reorder them correctly.**
 
- ### Arrange the steps to set up Azure Front Door in the correct order:
+
 <ul id="sortable-setup" class="styled-list">
   <li class="ui-state-default" data-order="5">Testing and Deployment: The chatbot undergoes rigorous testing to ensure it meets user needs and performs reliably. It is then deployed within Microsoft Teams for easy access.</li>
   <li class="ui-state-default" data-order="3">Integration with Corporate Resources: The chatbot is connected to various knowledge bases and document repositories using APIs, ensuring it can retrieve and present information from multiple sources.</li>
