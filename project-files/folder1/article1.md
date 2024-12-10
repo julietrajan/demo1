@@ -12,7 +12,7 @@ courses: [SC-200,SC-300, AZ-500]
     <style>
         .grid {
             display: grid;
-            grid-template-columns: repeat(12, 30px); /* Adjust columns as per the crossword size */
+            grid-template-columns: repeat(12, 30px); /* Adjust the column count based on crossword width */
             gap: 2px;
         }
         .cell {
@@ -41,17 +41,61 @@ courses: [SC-200,SC-300, AZ-500]
         input:focus {
             outline: none;
         }
+        .incorrect {
+            background-color: #ffcccc; /* Red highlight for incorrect answers */
+        }
     </style>
+    <script>
+        // Store the correct answers in the grid
+        const correctAnswers = [
+            ['A', 'Z', 'U', 'R', 'E', '', '', '', '', '', '', ''],
+            ['', 'C', 'O', 'S', 'M', 'O', 'S', 'D', 'B', '', '', ''],
+            ['', '', 'A', 'P', 'I', 'S', 'E', '', '', '', '', ''],
+            ['', '', 'F', 'U', 'N', 'C', 'T', 'I', 'O', 'N', 'S', ''],
+            ['', 'A', 'Z', 'U', 'R', 'E', 'S', 'Q', 'L', 'D', 'A', 'T'],
+            ['A', 'Z', 'U', 'R', 'E', 'S', 'Q', 'L', 'D', 'A', 'T', 'A'],
+        ];
+
+        // Check if the entered answers are correct
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.editable input');
+            inputs.forEach((input, index) => {
+                const row = Math.floor(index / 12); // Calculate row index
+                const col = index % 12; // Calculate column index
+                const correctAnswer = correctAnswers[row][col];
+                if (correctAnswer && input.value.toUpperCase() !== correctAnswer) {
+                    input.classList.add('incorrect'); // Highlight incorrect answers
+                } else {
+                    input.classList.remove('incorrect'); // Remove highlight for correct answers
+                }
+            });
+        }
+
+        // Fill all correct answers in the grid
+        function revealAnswers() {
+            const inputs = document.querySelectorAll('.editable input');
+            inputs.forEach((input, index) => {
+                const row = Math.floor(index / 12); // Calculate row index
+                const col = index % 12; // Calculate column index
+                const correctAnswer = correctAnswers[row][col];
+                if (correctAnswer) {
+                    input.value = correctAnswer; // Fill correct answer
+                    input.classList.remove('incorrect'); // Remove incorrect highlight
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 
 <div class="grid">
+    <!-- Grid Rows -->
     <!-- Row 1 -->
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="Z"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="U"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="R"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="E"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
@@ -62,14 +106,14 @@ courses: [SC-200,SC-300, AZ-500]
 
     <!-- Row 2 -->
     <div class="cell non-editable"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="C"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="O"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="S"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="M"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="O"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="S"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="D"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="B"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
@@ -77,11 +121,11 @@ courses: [SC-200,SC-300, AZ-500]
     <!-- Row 3 -->
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="P"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="I"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="S"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="E"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
@@ -91,45 +135,49 @@ courses: [SC-200,SC-300, AZ-500]
     <!-- Row 4 -->
     <div class="cell non-editable"></div>
     <div class="cell non-editable"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="F"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="U"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="N"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="C"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="T"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="I"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="O"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="N"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="S"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
     <div class="cell non-editable"></div>
 
     <!-- Row 5 -->
     <div class="cell non-editable"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="Z"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="U"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="R"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="E"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="S"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="Q"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="L"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="D"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="T"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
 
     <!-- Row 6 -->
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="Z"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="U"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="R"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="E"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="S"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="Q"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="L"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="D"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="T"></div>
-    <div class="cell editable"><input type="text" maxlength="1" value="A"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
+    <div class="cell editable"><input type="text" maxlength="1"></div>
 </div>
+
+<br>
+<button onclick="checkAnswers()">Check Answers</button>
+<button onclick="revealAnswers()">Reveal Answers</button>
 
 </body>
 </html>
