@@ -176,9 +176,7 @@ This is a test article
 ## Scene 3: How Azure Front Door Works
 
 **Azure Front Door uses intelligent routing to manage traffic and ensure optimal performance.**
-<a href="./3.png" download>
-  <img src="./3.png" alt="Digital and App Innovation">
-</a>
+
 
 ### Select the correct routing method used by Azure Front Door:
 <select id="quiz-dropdown-2" onchange="checkAnswer2()" class="styled-dropdown">
@@ -367,9 +365,8 @@ To address the challenges of dispersed information, user experience, and securit
   }
 </script>
 
-## Azure Services Validation2
+## Azure Services Validation
 
-{% raw %}
 <form id="validation-form">
   <div class="service-row">
     <select name="service" class="service-dropdown">
@@ -441,4 +438,3 @@ To address the challenges of dispersed information, user experience, and securit
     resultElement.className = 'result correct';
   }
 </script>
-{% endraw %}
