@@ -13,7 +13,7 @@ The company transitioned from a fragmented and siloed security model to a seamle
 HEINEKEN uses a variety of Microsoft Security solutions to protect its digital transformation efforts. Microsoft 365 E5 provides a comprehensive suite of advanced security features. The Microsoft Defender Suite, including Defender for Cloud, Defender for Cloud Apps, Defender for Endpoint, and Defender for Identity, offers protection for cloud environments, app usage, endpoints, and identities, respectively. Additionally, Microsoft Entra ID is used for identity and access management, while Microsoft Sentinel serves as the security information and event management (SIEM) tool for monitoring and response.
 By leveraging these tools, HEINEKEN has enhanced its security posture and agility, improved visibility and control over its IT environment, and ensured the ability to innovate securely while supporting global operations.
 
-Contoso use <input type="text" id="cloudProtection" class="input-box" oninput="this.value = this.value.toUpperCase()"> to protect the cloud environment.
+<input type="text" id="cloudProtection" class="input-box" oninput="this.value = this.value.toUpperCase()"> is used for identity and access management.
 
 <button type="button" onclick="checkAnswer1()">Check</button>
 <button type="button" onclick="revealAnswer1()">Reveal Answer</button>
@@ -62,19 +62,41 @@ Contoso use <input type="text" id="cloudProtection" class="input-box" oninput="t
 <script>
   function checkAnswer1() {
     var answer = document.getElementById('cloudProtection').value.toUpperCase();
-    if (answer === 'DEFENDER FOR CLOUD') {
+    if (answer === 'MICROSOFT ENTRA ID') {
       document.getElementById('result').innerText = 'Correct answer';
     } else {
-      document.getElementById('result').innerText = 'Try again';
+      document.getElementById('result').innerText = 'MICROSOFT ENTRA ID';
     }
   }
 
   function revealAnswer1() {
-    document.getElementById('cloudProtection').value = 'DEFENDER FOR CLOUD';
+    document.getElementById('cloudProtection').value = 'MICROSOFT ENTRA ID';
     document.getElementById('result').innerText = '';
   }
 </script>
 
+For security information and event management, HEINEKEN uses Microsoft <input type="text" id="cloudProtection2" class="input-box" oninput="this.value = this.value.toUpperCase()"> 
+
+<button type="button" onclick="checkAnswer2()">Check</button>
+<button type="button" onclick="revealAnswer2()">Reveal Answer</button>
+
+<p id="result2"></p>
+
+<script>
+  function checkAnswer2() {
+    var answer = document.getElementById('cloudProtection2').value.toUpperCase();
+    if (answer === 'SENTINEL') {
+      document.getElementById('result2').innerText = 'Correct answer';
+    } else {
+      document.getElementById('result2').innerText = 'SENTINEL';
+    }
+  }
+
+  function revealAnswer2() {
+    document.getElementById('cloudProtection2').value = 'SENTINEL';
+    document.getElementById('result2').innerText = '';
+  }
+</script>
 
 ## HEINEKEN Security Solutions
 
