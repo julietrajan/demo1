@@ -532,7 +532,7 @@ var dropdown = document.getElementById(dropdownId);
     const heartsDiv = document.getElementById('hearts');
     heartsDiv.innerHTML = '';
     for (let i = 0; i < remainingHearts; i++) {
-      heartsDiv.innerHTML += '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" alt="Heart">';
+      heartsDiv.innerHTML += '<img src="https://www.freeiconspng.com/uploads/heart-png-2.png" alt="Heart">';
     }
   }
 
