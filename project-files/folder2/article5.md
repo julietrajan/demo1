@@ -447,6 +447,171 @@ var dropdown = document.getElementById(dropdownId);
       feedback.textContent = correctAnswers["Azure AI Bot Service"];
       feedback.style.color = "green";
   }
+
+
+    ## Question: Interactive way to write a code to analyse and transform data
+
+<form id="petForm">
+  <label for="letterN"></label>
+  <input type="text" id="letterN" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO"></label>
+  <input type="text" id="letterO" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterT"></label>
+  <input type="text" id="letterT" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterE"></label>
+  <input type="text" id="letterE" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterB"></label>
+  <input type="text" id="letterB" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO2"></label>
+  <input type="text" id="letterO2" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO3"></label>
+  <input type="text" id="letterO3" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterK"></label>
+  <input type="text" id="letterK" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <br>
+  <div id="hearts" style="margin-top: 10px;"></div>
+  <br>
+  <button type="button" onclick="checkAnswer()">Submit</button>
+  <button type="button" onclick="clearAll()">Clear All</button>
+  <button type="button" onclick="fillCorrectAnswer()">Fill Correct Answer</button>
+</form>
+
+<p id="result"></p>
+
+<style>
+  .letter-input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: border-color 0.3s;
+  }
+
+  .letter-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  button {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #result {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  #hearts img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+  }
+</style>
+
+<script>
+  const maxHearts = 5;
+  let remainingHearts = maxHearts;
+
+  function renderHearts() {
+    const heartsDiv = document.getElementById('hearts');
+    heartsDiv.innerHTML = '';
+    for (let i = 0; i < remainingHearts; i++) {
+      heartsDiv.innerHTML += '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" alt="Heart">';
+    }
+  }
+
+  function checkAnswer() {
+    const answers = {
+      letterN: 'N',
+      letterO: 'O',
+      letterT: 'T',
+      letterE: 'E',
+      letterB: 'B',
+      letterO2: 'O',
+      letterO3: 'O',
+      letterK: 'K'
+    };
+
+    let isCorrect = true;
+
+    for (const [id, correctValue] of Object.entries(answers)) {
+      const input = document.getElementById(id);
+      if (input.value.toUpperCase() !== correctValue) {
+        input.style.color = 'red';
+        isCorrect = false;
+        remainingHearts--;
+        break;
+      } else {
+        input.style.color = 'black';
+      }
+    }
+
+    renderHearts();
+
+    if (remainingHearts === 0) {
+      document.getElementById('result').innerText = 'Click the button to see the right answer';
+    } else if (isCorrect) {
+      document.getElementById('result').innerText = 'Correct!';
+    } else {
+      document.getElementById('result').innerText = 'Try Again';
+    }
+  }
+
+  function clearAll() {
+    document.getElementById('letterN').value = '';
+    document.getElementById('letterO').value = '';
+    document.getElementById('letterT').value = '';
+    document.getElementById('letterE').value = '';
+    document.getElementById('letterB').value = '';
+    document.getElementById('letterO2').value = '';
+    document.getElementById('letterO3').value = '';
+    document.getElementById('letterK').value = '';
+
+    for (const input of document.querySelectorAll('.letter-input')) {
+      input.style.color = 'black';
+    }
+
+    document.getElementById('result').innerText = '';
+    remainingHearts = maxHearts;
+    renderHearts();
+  }
+
+  function fillCorrectAnswer() {
+    document.getElementById('letterN').value = 'N';
+    document.getElementById('letterO').value = 'O';
+    document.getElementById('letterT').value = 'T';
+    document.getElementById('letterE').value = 'E';
+    document.getElementById('letterB').value = 'B';
+    document.getElementById('letterO2').value = 'O';
+    document.getElementById('letterO3').value = 'O';
+    document.getElementById('letterK').value = 'K';
+
+    for (const input of document.querySelectorAll('.letter-input')) {
+      input.style.color = 'black';
+    }
+
+    document.getElementById('result').innerText = '';
+  }
+
+  // Initialize hearts on page load
+  document.addEventListener('DOMContentLoaded', renderHearts);
+</script>
+
     
   }
 </script>
