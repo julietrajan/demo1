@@ -110,7 +110,7 @@ What is the capital of France?
   <button type="button" onclick="checkAnswer()">Submit</button>
 </form>
 
-<p id="result"></p>
+<p id="result1"></p>
 
 <script>
   function checkAnswer() {
@@ -124,7 +124,7 @@ What is the capital of France?
       document.getElementById('letterC').value = '';
       document.getElementById('letterA').value = '';
       document.getElementById('letterT').value = '';
-      document.getElementById('result').innerText = 'Try Again';
+      document.getElementById('result1').innerText = 'Try Again';
     }
   }
 </script>
