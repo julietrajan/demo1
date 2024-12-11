@@ -15,8 +15,8 @@ By leveraging these tools, HEINEKEN has enhanced its security posture and agilit
 
 Contoso use <input type="text" id="cloudProtection" class="input-box" oninput="this.value = this.value.toUpperCase()"> to protect the cloud environment.
 
-<button type="button" onclick="checkAnswer()">Check</button>
-<button type="button" onclick="revealAnswer()">Reveal Answer</button>
+<button type="button" onclick="checkAnswer1()">Check</button>
+<button type="button" onclick="revealAnswer1()">Reveal Answer</button>
 
 <p id="result"></p>
 
@@ -60,7 +60,7 @@ Contoso use <input type="text" id="cloudProtection" class="input-box" oninput="t
 </style>
 
 <script>
-  function checkAnswer() {
+  function checkAnswer1() {
     var answer = document.getElementById('cloudProtection').value.toUpperCase();
     if (answer === 'DEFENDER FOR CLOUD') {
       document.getElementById('result').innerText = 'Correct answer';
@@ -69,8 +69,61 @@ Contoso use <input type="text" id="cloudProtection" class="input-box" oninput="t
     }
   }
 
-  function revealAnswer() {
+  function revealAnswer1() {
     document.getElementById('cloudProtection').value = 'DEFENDER FOR CLOUD';
     document.getElementById('result').innerText = '';
+  }
+</script>
+
+
+## HEINEKEN Security Solutions
+
+1. HEINEKEN uses <select id="q1" onchange="checkAnswer('q1', 'DEFENDER FOR CLOUD')">
+    <option value="">Select an answer</option>
+    <option value="DEFENDER FOR CLOUD">Defender for Cloud</option>
+    <option value="DEFENDER FOR CLOUD APPS">Defender for Cloud Apps</option>
+    <option value="DEFENDER FOR ENDPOINT">Defender for Endpoint</option>
+    <option value="DEFENDER FOR IDENTITY">Defender for Identity</option>
+   </select> to protect its cloud environments.
+   <span id="result1"></span>
+
+2. For securing app usage, HEINEKEN relies on <select id="q2" onchange="checkAnswer('q2', 'DEFENDER FOR CLOUD APPS')">
+    <option value="">Select an answer</option>
+    <option value="DEFENDER FOR CLOUD">Defender for Cloud</option>
+    <option value="DEFENDER FOR CLOUD APPS">Defender for Cloud Apps</option>
+    <option value="DEFENDER FOR ENDPOINT">Defender for Endpoint</option>
+    <option value="DEFENDER FOR IDENTITY">Defender for Identity</option>
+   </select>.
+   <span id="result2"></span>
+
+3. <select id="q3" onchange="checkAnswer('q3', 'DEFENDER FOR ENDPOINT')">
+    <option value="">Select an answer</option>
+    <option value="DEFENDER FOR CLOUD">Defender for Cloud</option>
+    <option value="DEFENDER FOR CLOUD APPS">Defender for Cloud Apps</option>
+    <option value="DEFENDER FOR ENDPOINT">Defender for Endpoint</option>
+    <option value="DEFENDER FOR IDENTITY">Defender for Identity</option>
+   </select> provides endpoint protection for HEINEKEN.
+   <span id="result3"></span>
+
+4. To monitor and protect identities, HEINEKEN uses <select id="q4" onchange="checkAnswer('q4', 'DEFENDER FOR IDENTITY')">
+    <option value="">Select an answer</option>
+    <option value="DEFENDER FOR CLOUD">Defender for Cloud</option>
+    <option value="DEFENDER FOR CLOUD APPS">Defender for Cloud Apps</option>
+    <option value="DEFENDER FOR ENDPOINT">Defender for Endpoint</option>
+    <option value="DEFENDER FOR IDENTITY">Defender for Identity</option>
+   </select>.
+   <span id="result4"></span>
+
+<script>
+  function checkAnswer(questionId, correctAnswer) {
+    var selectedAnswer = document.getElementById(questionId).value;
+    var resultId = 'result' + questionId.charAt(1);
+    if (selectedAnswer === correctAnswer) {
+      document.getElementById(resultId).innerText = 'Correct answer';
+      document.getElementById(resultId).style.color = 'green';
+    } else {
+      document.getElementById(resultId).innerText = 'Try again';
+      document.getElementById(resultId).style.color = 'red';
+    }
   }
 </script>
