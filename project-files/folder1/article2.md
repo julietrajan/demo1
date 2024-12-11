@@ -102,12 +102,13 @@ What is the capital of France?
 
 <form id="petForm">
   <label for="letterC">C:</label>
-  <input type="text" id="letterC" maxlength="1">
+  <input type="text" id="letterC" maxlength="1" style="width: 20px; text-align: center;">
   <label for="letterA">A:</label>
-  <input type="text" id="letterA" maxlength="1">
+  <input type="text" id="letterA" maxlength="1" style="width: 20px; text-align: center;">
   <label for="letterT">T:</label>
-  <input type="text" id="letterT" maxlength="1">
+  <input type="text" id="letterT" maxlength="1" style="width: 20px; text-align: center;">
   <button type="button" onclick="checkAnswer()">Submit</button>
+  <button type="button" onclick="clearAll()">Clear All</button>
 </form>
 
 <p id="result"></p>
@@ -117,14 +118,43 @@ What is the capital of France?
     var c = document.getElementById('letterC').value.toUpperCase();
     var a = document.getElementById('letterA').value.toUpperCase();
     var t = document.getElementById('letterT').value.toUpperCase();
-    
-    if (c === 'C' && a === 'A' && t === 'T') {
+    var isCorrect = true;
+
+    if (c !== 'C') {
+      document.getElementById('letterC').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterC').style.color = 'black';
+    }
+
+    if (a !== 'A') {
+      document.getElementById('letterA').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterA').style.color = 'black';
+    }
+
+    if (t !== 'T') {
+      document.getElementById('letterT').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterT').style.color = 'black';
+    }
+
+    if (isCorrect) {
       document.getElementById('result').innerText = 'Correct!';
     } else {
-      document.getElementById('letterC').value = '';
-      document.getElementById('letterA').value = '';
-      document.getElementById('letterT').value = '';
       document.getElementById('result').innerText = 'Try Again';
     }
+  }
+
+  function clearAll() {
+    document.getElementById('letterC').value = '';
+    document.getElementById('letterA').value = '';
+    document.getElementById('letterT').value = '';
+    document.getElementById('letterC').style.color = 'black';
+    document.getElementById('letterA').style.color = 'black';
+    document.getElementById('letterT').style.color = 'black';
+    document.getElementById('result').innerText = '';
   }
 </script>
