@@ -448,8 +448,9 @@ var dropdown = document.getElementById(dropdownId);
       feedback.style.color = "green";
   }
 
-
-    ## Question: Interactive way to write a code to analyse and transform data
+  }
+</script>
+## Question: Interactive way to write a code to analyse and transform data
 
 <form id="petForm">
   <label for="letterN"></label>
@@ -613,5 +614,4 @@ var dropdown = document.getElementById(dropdownId);
 </script>
 
     
-  }
-</script>
+
