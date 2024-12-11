@@ -98,20 +98,48 @@ What is the capital of France?
   }
 </style>
 
+
+
 ## Question: What is your pet animal?
 
 <form id="petForm">
-  <label for="letterC">C:</label>
-  <input type="text" id="letterC" maxlength="1" style="width: 20px; text-align: center;">
-  <label for="letterA">A:</label>
-  <input type="text" id="letterA" maxlength="1" style="width: 20px; text-align: center;">
-  <label for="letterT">T:</label>
-  <input type="text" id="letterT" maxlength="1" style="width: 20px; text-align: center;">
+  <label for="letterC"></label>
+  <input type="text" id="letterC" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterA"></label>
+  <input type="text" id="letterA" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterT"></label>
+  <input type="text" id="letterT" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
   <button type="button" onclick="checkAnswer()">Submit</button>
   <button type="button" onclick="clearAll()">Clear All</button>
+  <button type="button" onclick="fillCorrectAnswer()">Fill Correct Answer</button>
 </form>
 
 <p id="result"></p>
+
+<style>
+  .letter-input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: border-color 0.3s;
+  }
+
+  .letter-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+
+
+  #result {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+</style>
 
 <script>
   function checkAnswer() {
@@ -152,6 +180,16 @@ What is the capital of France?
     document.getElementById('letterC').value = '';
     document.getElementById('letterA').value = '';
     document.getElementById('letterT').value = '';
+    document.getElementById('letterC').style.color = 'black';
+    document.getElementById('letterA').style.color = 'black';
+    document.getElementById('letterT').style.color = 'black';
+    document.getElementById('result').innerText = '';
+  }
+
+  function fillCorrectAnswer() {
+    document.getElementById('letterC').value = 'C';
+    document.getElementById('letterA').value = 'A';
+    document.getElementById('letterT').value = 'T';
     document.getElementById('letterC').style.color = 'black';
     document.getElementById('letterA').style.color = 'black';
     document.getElementById('letterT').style.color = 'black';
