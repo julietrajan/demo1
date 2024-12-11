@@ -100,15 +100,26 @@ What is the capital of France?
 
 
 
-## Question: What is your pet animal?
+## Question: Interactive way to write a code to analyse and transform data
 
 <form id="petForm">
-  <label for="letterC"></label>
-  <input type="text" id="letterC" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
-  <label for="letterA"></label>
-  <input type="text" id="letterA" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterN"></label>
+  <input type="text" id="letterN" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO"></label>
+  <input type="text" id="letterO" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
   <label for="letterT"></label>
   <input type="text" id="letterT" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterE"></label>
+  <input type="text" id="letterE" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterB"></label>
+  <input type="text" id="letterB" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO2"></label>
+  <input type="text" id="letterO2" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO3"></label>
+  <input type="text" id="letterO3" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterK"></label>
+  <input type="text" id="letterK" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <br>
   <button type="button" onclick="checkAnswer()">Submit</button>
   <button type="button" onclick="clearAll()">Clear All</button>
   <button type="button" onclick="fillCorrectAnswer()">Fill Correct Answer</button>
@@ -133,7 +144,21 @@ What is the capital of France?
     outline: none;
   }
 
+  button {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
+  button:hover {
+    background-color: #0056b3;
+  }
 
   #result {
     margin-top: 10px;
@@ -143,23 +168,28 @@ What is the capital of France?
 
 <script>
   function checkAnswer() {
-    var c = document.getElementById('letterC').value.toUpperCase();
-    var a = document.getElementById('letterA').value.toUpperCase();
+    var n = document.getElementById('letterN').value.toUpperCase();
+    var o = document.getElementById('letterO').value.toUpperCase();
     var t = document.getElementById('letterT').value.toUpperCase();
+    var e = document.getElementById('letterE').value.toUpperCase();
+    var b = document.getElementById('letterB').value.toUpperCase();
+    var o2 = document.getElementById('letterO2').value.toUpperCase();
+    var o3 = document.getElementById('letterO3').value.toUpperCase();
+    var k = document.getElementById('letterK').value.toUpperCase();
     var isCorrect = true;
 
-    if (c !== 'C') {
-      document.getElementById('letterC').style.color = 'red';
+    if (n !== 'N') {
+      document.getElementById('letterN').style.color = 'red';
       isCorrect = false;
     } else {
-      document.getElementById('letterC').style.color = 'black';
+      document.getElementById('letterN').style.color = 'black';
     }
 
-    if (a !== 'A') {
-      document.getElementById('letterA').style.color = 'red';
+    if (o !== 'O') {
+      document.getElementById('letterO').style.color = 'red';
       isCorrect = false;
     } else {
-      document.getElementById('letterA').style.color = 'black';
+      document.getElementById('letterO').style.color = 'black';
     }
 
     if (t !== 'T') {
@@ -167,6 +197,41 @@ What is the capital of France?
       isCorrect = false;
     } else {
       document.getElementById('letterT').style.color = 'black';
+    }
+
+    if (e !== 'E') {
+      document.getElementById('letterE').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterE').style.color = 'black';
+    }
+
+    if (b !== 'B') {
+      document.getElementById('letterB').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterB').style.color = 'black';
+    }
+
+    if (o2 !== 'O') {
+      document.getElementById('letterO2').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterO2').style.color = 'black';
+    }
+
+     if (o3 !== 'O') {
+      document.getElementById('letterO3').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterO3').style.color = 'black';
+    }
+
+    if (k !== 'K') {
+      document.getElementById('letterK').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterK').style.color = 'black';
     }
 
     if (isCorrect) {
@@ -177,22 +242,42 @@ What is the capital of France?
   }
 
   function clearAll() {
-    document.getElementById('letterC').value = '';
-    document.getElementById('letterA').value = '';
+    document.getElementById('letterN').value = '';
+    document.getElementById('letterO').value = '';
     document.getElementById('letterT').value = '';
-    document.getElementById('letterC').style.color = 'black';
-    document.getElementById('letterA').style.color = 'black';
+    document.getElementById('letterE').value = '';
+    document.getElementById('letterB').value = '';
+    document.getElementById('letterO2').value = '';
+    document.getElementById('letterO3').value = '';
+    document.getElementById('letterK').value = '';
+    document.getElementById('letterN').style.color = 'black';
+    document.getElementById('letterO').style.color = 'black';
     document.getElementById('letterT').style.color = 'black';
+    document.getElementById('letterE').style.color = 'black';
+    document.getElementById('letterB').style.color = 'black';
+    document.getElementById('letterO2').style.color = 'black';
+    document.getElementById('letterO3').style.color = 'black';
+    document.getElementById('letterK').style.color = 'black';
     document.getElementById('result').innerText = '';
   }
 
   function fillCorrectAnswer() {
-    document.getElementById('letterC').value = 'C';
-    document.getElementById('letterA').value = 'A';
+    document.getElementById('letterN').value = 'N';
+    document.getElementById('letterO').value = 'O';
     document.getElementById('letterT').value = 'T';
-    document.getElementById('letterC').style.color = 'black';
-    document.getElementById('letterA').style.color = 'black';
+    document.getElementById('letterE').value = 'E';
+    document.getElementById('letterB').value = 'B';
+    document.getElementById('letterO2').value = 'O';
+    document.getElementById('letterO3').value = 'O';
+    document.getElementById('letterK').value = 'K';
+    document.getElementById('letterN').style.color = 'black';
+    document.getElementById('letterO').style.color = 'black';
     document.getElementById('letterT').style.color = 'black';
+    document.getElementById('letterE').style.color = 'black';
+    document.getElementById('letterB').style.color = 'black';
+    document.getElementById('letterO2').style.color = 'black';
+    document.getElementById('letterO3').style.color = 'black';
+    document.getElementById('letterK').style.color = 'black';
     document.getElementById('result').innerText = '';
   }
 </script>
