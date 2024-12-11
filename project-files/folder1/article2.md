@@ -98,33 +98,3 @@ What is the capital of France?
   }
 </style>
 
-## Question: What is your pet animal?
-
-<form id="petForm">
-  <label for="letterC">C:</label>
-  <input type="text" id="letterC" maxlength="1">
-  <label for="letterA">A:</label>
-  <input type="text" id="letterA" maxlength="1">
-  <label for="letterT">T:</label>
-  <input type="text" id="letterT" maxlength="1">
-  <button type="button" onclick="checkAnswer()">Submit</button>
-</form>
-
-<p id="result1"></p>
-
-<script>
-  function checkAnswer() {
-    var c = document.getElementById('letterC').value.toUpperCase();
-    var a = document.getElementById('letterA').value.toUpperCase();
-    var t = document.getElementById('letterT').value.toUpperCase();
-    
-    if (c === 'C' && a === 'A' && t === 'T') {
-      document.getElementById('result').innerText = 'Correct!';
-    } else {
-      document.getElementById('letterC').value = '';
-      document.getElementById('letterA').value = '';
-      document.getElementById('letterT').value = '';
-      document.getElementById('result1').innerText = 'Try Again';
-    }
-  }
-</script>
