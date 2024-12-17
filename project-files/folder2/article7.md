@@ -37,15 +37,15 @@ How did the introduction of AI-driven cybersecurity through Copilot for Security
   <label for="a3">It increased the number of manual processes </label><br>
   <input type="radio" id="q4" name="answer" value="q4">
   <label for="a4">It decreased the secure score </label><br>
-  <button type="button" onclick="checkAnswer(answer)" class="styled-button">Submit</button>
+  <button type="button" onclick="checkAnswer()" class="styled-button">Submit</button>
 </form>
 
 <p id="result"></p>
 
 <script>
-  function checkAnswer(answer) {
+  function checkAnswer() {
     var radios = document.getElementsByName('answer');
-    var correctAnswer = answer;
+    var correctAnswer = 'q2';
     var result = document.getElementById('result');
     var selected = false;
 
@@ -74,17 +74,50 @@ Question 2:
 
 Which Microsoft tool did Tailwind Trader’s deploy to centralize threat detection, analysis, and response? 
 
-Microsoft Azure 
+<form id="quizForm">
+  <input type="radio" id="q1" name="answer" value="q1">
+  <label for="a1"> Microsoft Azure  </label><br>
+  <input type="radio" id="q2" name="answer" value="q2">
+  <label for="a2"> Microsoft Sentinel  </label><br>
+  <input type="radio" id="q3" name="answer" value="q3">
+  <label for="a3"> Microsoft Teams  </label><br>
+  <input type="radio" id="q4" name="answer" value="q4">
+  <label for="a4">Microsoft Office 365  </label><br>
+  <button type="button" onclick="checkAnswer1()" class="styled-button">Submit</button>
+</form>
 
-B. Microsoft Sentinel 
+<p id="result1"></p>
 
-C. Microsoft Teams 
+<script>
+  function checkAnswer1() {
+    var radios = document.getElementsByName('answer');
+    var correctAnswer = 'q2';
+    var result= document.getElementById('result1');
+    var selected = false;
 
-D. Microsoft Office 365 
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        selected = true;
+        if (radios[i].value === correctAnswer) {
+          result.textContent = 'Correct!';
+          result.style.color = 'green';
+        } else {
+          result.textContent = 'Incorrect. Try again!';
+          result.style.color = 'red';
+        }
+        break;
+      }
+    }
 
-Answer: B. Microsoft Sentinel 
+    if (!selected) {
+      result.textContent = 'Please select an answer.';
+      result.style.color = 'orange';
+    }
+  }
+</script>
 
- 
+
+
 
 Question 3: How did the integration of Defender tools benefit Tailwind Trader’s security operations? 
 
