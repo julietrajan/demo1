@@ -12,7 +12,7 @@ This page contains a video about Azure Functions, followed by some quiz question
 
 {% raw %}
 <div class="smart-player-embed-container">
-    <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance" src="/assets/azurefun1/azurefun1_player.html?embedIFrameId=embeddedSmartPlayerInstance" width="1024" height="600" scrolling="no" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance" src="/azurefun1/azurefun1_player.html?embedIFrameId=embeddedSmartPlayerInstance" width="1024" height="600" scrolling="no" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
 <script src="/assets/azurefun1/scripts/embedded-smart-player.min.js"></script>
 {% endraw %}
