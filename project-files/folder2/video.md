@@ -8,6 +8,12 @@ sub-category: "Security"
 This page contains a video about Azure Functions, followed by some quiz questions to test your understanding.
 
 ## Video
+
+<div class="smart-player-embed-container"> 
+    <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance" src="Azure Func Video/Azure Func Video_player.html?embedIFrameId=embeddedSmartPlayerInstance" scrolling="no" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+</div> 
+<script src="Azure Func Video/scripts/embedded-smart-player.min.js"></script>
+
 <div class="smart-player-embed-container">
     <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance" src="Azure Func Video/Azure Func Video_player.html?embedIFrameId=embeddedSmartPlayerInstance" width="1024" height="600" scrolling="no" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
