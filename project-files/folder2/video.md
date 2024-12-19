@@ -4,8 +4,7 @@ title: "video"
 category: "Comic"
 sub-category: "Security"
 ---
-
-# My Video
+# Azure Firewall Features
 
 <div class="tile" onclick="toggleFeatures()">
     <h2>Azure Firewall</h2>
