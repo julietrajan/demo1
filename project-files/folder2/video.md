@@ -15,12 +15,13 @@ sub-category: "Security"
             perspective: 1000px;
         }
         .tile {
-            width: 200px;
-            height: 100px;
+            width: 300px; /* Increased width */
+            height: 150px; /* Increased height */
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.6s;
             cursor: pointer;
+            border-radius: 15px; /* Rounded edges */
         }
         .tile .front, .tile .back {
             position: absolute;
@@ -32,6 +33,7 @@ sub-category: "Security"
             justify-content: center;
             color: white;
             font-size: 20px;
+            border-radius: 15px; /* Rounded edges */
         }
         .tile .front {
             background-color: blue;
@@ -49,12 +51,10 @@ sub-category: "Security"
     <div class="tile-container">
         <div class="tile" onclick="flipTile(this)">
             <div class="front">
-                <h2>Azure Firewall!</h2>
+                <h2>Click Me!</h2>
             </div>
             <div class="back">
-                <h2>Azure Firewall</h2>
-                <li>Stateful</li>
-                <li>Managed Service</li>
+                <h2>Flipped Side</h2>
             </div>
         </div>
     </div>
