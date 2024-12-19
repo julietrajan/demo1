@@ -7,45 +7,44 @@ sub-category: "Security"
 
 # My Video
 
-Here is an embedded video:
-
-<iframe src="/demo1/project-files/folder2/azurefun1/azurefun1_player.html" width="1024" height="600" frameborder="0" allowfullscreen></iframe>
+<div class="tile" onclick="toggleFeatures()">
+    <h2>Azure Firewall</h2>
+    <div id="features" class="features">
+        <ul>
+            <li>Feature 1: Built-in high availability</li>
+            <li>Feature 2: Unrestricted cloud scalability</li>
+            <li>Feature 3: Threat intelligence-based filtering</li>
+            <li>Feature 4: Application FQDN filtering rules</li>
+            <li>Feature 5: Network traffic logging</li>
+        </ul>
+    </div>
+</div>
 
 <style>
-    .icon {
-        position: absolute;
-        cursor: pointer;
-    }
-    .tooltip {
-        display: none;
-        position: absolute;
-        background-color: #fff;
+    .tile {
         border: 1px solid #ccc;
-        padding: 5px;
-        border-radius: 3px;
+        padding: 20px;
+        margin: 20px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+        transition: background-color 0.3s;
+    }
+    .tile:hover {
+        background-color: #e0e0e0;
+    }
+    .features {
+        display: none;
+        margin-top: 10px;
     }
 </style>
 
-<div style="position: relative;">
-    <img src="1.png" alt="Interactive Image" style="width: 100%;">
-    <img src="2.jpeg" alt="Icon 1" class="icon" style="top: 20%; left: 30%;" onclick="showTooltip(event, 'Answer 1')">
-    <img src="3.png" alt="Icon 2" class="icon" style="top: 50%; left: 60%;" onclick="showTooltip(event, 'Answer 2')">
-</div>
-<div id="tooltip" class="tooltip"></div>
-
 <script>
-    function showTooltip(event, text) {
-        var tooltip = document.getElementById('tooltip');
-        tooltip.innerHTML = text;
-        tooltip.style.display = 'block';
-        tooltip.style.top = event.clientY + 'px';
-        tooltip.style.left = event.clientX + 'px';
-    }
-
-    document.addEventListener('click', function(event) {
-        var tooltip = document.getElementById('tooltip');
-        if (!event.target.classList.contains('icon')) {
-            tooltip.style.display = 'none';
+    function toggleFeatures() {
+        var features = document.getElementById('features');
+        if (features.style.display === 'none' || features.style.display === '') {
+            features.style.display = 'block';
+        } else {
+            features.style.display = 'none';
         }
-    });
+    }
 </script>
