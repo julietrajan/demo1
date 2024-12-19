@@ -9,19 +9,20 @@ sub-category: "Security"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Tile</title>
+    <title>Scenario-Based Learning Tile</title>
     <style>
         .tile-container {
             perspective: 1000px;
         }
         .tile {
-            width: 300px; /* Increased width */
-            height: 150px; /* Increased height */
+            width: 300px;
+            height: 200px;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.6s;
             cursor: pointer;
-            border-radius: 15px; /* Rounded edges */
+            border-radius: 15px;
+            margin: 20px;
         }
         .tile .front, .tile .back {
             position: absolute;
@@ -32,8 +33,10 @@ sub-category: "Security"
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
-            border-radius: 15px; /* Rounded edges */
+            font-size: 18px;
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .tile .front {
             background-color: blue;
@@ -41,6 +44,7 @@ sub-category: "Security"
         .tile .back {
             background-color: green;
             transform: rotateY(180deg);
+            text-align: left;
         }
         .tile.flipped {
             transform: rotateY(180deg);
@@ -51,10 +55,15 @@ sub-category: "Security"
     <div class="tile-container">
         <div class="tile" onclick="flipTile(this)">
             <div class="front">
-                <h2>Click Me!</h2>
+                <h2>Scenario: Scaling an Application</h2>
             </div>
             <div class="back">
-                <h2>Flipped Side</h2>
+                <p>Your web application is experiencing increased traffic. Choose the best scaling strategy:</p>
+                <ul>
+                    <li>Option 1: Scale up (increase the size of the VM)</li>
+                    <li>Option 2: Scale out (add more VMs)</li>
+                    <li>Option 3: Use Azure Autoscale</li>
+                </ul>
             </div>
         </div>
     </div>
