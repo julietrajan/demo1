@@ -4,46 +4,63 @@ title: "video"
 category: "Comic"
 sub-category: "Security"
 ---
-# Azure Firewall Features
-
-<div class="tile" onclick="toggleFeatures()">
-    <h2>Azure Firewall</h2>
-    <div id="features" class="features">
-        <ul>
-            <li>Feature 1: Built-in high availability</li>
-            <li>Feature 2: Unrestricted cloud scalability</li>
-            <li>Feature 3: Threat intelligence-based filtering</li>
-            <li>Feature 4: Application FQDN filtering rules</li>
-            <li>Feature 5: Network traffic logging</li>
-        </ul>
-    </div>
-</div>
-
-<style>
-    .tile {
-        border: 1px solid #ccc;
-        padding: 20px;
-        margin: 20px;
-        cursor: pointer;
-        background-color: #f9f9f9;
-        transition: background-color 0.3s;
-    }
-    .tile:hover {
-        background-color: #e0e0e0;
-    }
-    .features {
-        display: none;
-        margin-top: 10px;
-    }
-</style>
-
-<script>
-    function toggleFeatures() {
-        var features = document.getElementById('features');
-        if (features.style.display === 'none' || features.style.display === '') {
-            features.style.display = 'block';
-        } else {
-            features.style.display = 'none';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping Tile</title>
+    <style>
+        .tile-container {
+            perspective: 1000px;
         }
-    }
-</script>
+        .tile {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+        .tile .front, .tile .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .tile .front {
+            background-color: blue;
+        }
+        .tile .back {
+            background-color: green;
+            transform: rotateY(180deg);
+        }
+        .tile.flipped {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="tile-container">
+        <div class="tile" onclick="flipTile(this)">
+            <div class="front">
+                <h2>Click Me!</h2>
+            </div>
+            <div class="back">
+                <h2>Flipped Side</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipTile(tile) {
+            tile.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>
