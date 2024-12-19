@@ -67,32 +67,40 @@ sub-category: "Security"
     <div class="tile-container">
         <div class="tile" onclick="checkAnswer(this, 'incorrect')">
             <div class="front">Cat</div>
-            <div class="back" style="background-color: red;">Incorrect</div>
+            <div class="back">Incorrect</div>
         </div>
         <div class="tile" onclick="checkAnswer(this, 'incorrect')">
             <div class="front">Bat</div>
-            <div class="back" style="background-color: red;">Incorrect</div>
+            <div class="back">Incorrect</div>
         </div>
         <div class="tile" onclick="checkAnswer(this, 'incorrect')">
             <div class="front">Dog</div>
-            <div class="back" style="background-color: red;">Incorrect</div>
+            <div class="back">Incorrect</div>
         </div>
         <div class="tile" onclick="checkAnswer(this, 'correct')">
             <div class="front">Cow</div>
-            <div class="back" style="background-color: green;">Correct</div>
+            <div class="back">Correct</div>
         </div>
     </div>
 
     <script>
         function checkAnswer(tile, result) {
-            if (result === 'correct') {
-                tile.querySelector('.back').style.backgroundColor = 'green';
-                tile.querySelector('.back').textContent = 'Correct';
+            if (tile.classList.contains('flipped')) {
+                tile.classList.remove('flipped');
+                setTimeout(() => {
+                    tile.querySelector('.back').style.backgroundColor = '';
+                    tile.querySelector('.back').textContent = '';
+                }, 600); // Wait for the flip animation to complete
             } else {
-                tile.querySelector('.back').style.backgroundColor = 'red';
-                tile.querySelector('.back').textContent = 'Incorrect';
+                if (result === 'correct') {
+                    tile.querySelector('.back').style.backgroundColor = 'green';
+                    tile.querySelector('.back').textContent = 'Correct';
+                } else {
+                    tile.querySelector('.back').style.backgroundColor = 'red';
+                    tile.querySelector('.back').textContent = 'Incorrect';
+                }
+                tile.classList.add('flipped');
             }
-            tile.classList.add('flipped');
         }
     </script>
 </body>
