@@ -49,10 +49,12 @@ sub-category: "Security"
     <div class="tile-container">
         <div class="tile" onclick="flipTile(this)">
             <div class="front">
-                <h2>Click Me!</h2>
+                <h2>Azure Firewall!</h2>
             </div>
             <div class="back">
-                <h2>Flipped Side</h2>
+                <h2>Azure Firewall</h2>
+                <li>Stateful</li>
+                <li>Managed Service</li>
             </div>
         </div>
     </div>
