@@ -17,19 +17,19 @@ sub-category: "Security"
         }
         .tile-container {
             display: flex;
-            gap: 10px;
+            gap: 40px;
             margin-bottom: 20px;
             flex-wrap: wrap; /* Allow wrapping for better layout */
         }
         .tile {
-            width: 200px;
-            height: 100px;
+            width: 300px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: blue;
             color: white;
-            border-radius: 10px;
+            border-radius: 40px;
             cursor: pointer;
             transition: transform 0.6s, background-color 0.3s;
             padding: 10px; /* Added padding */
