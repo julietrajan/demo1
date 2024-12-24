@@ -10,16 +10,16 @@ sub-category: "Security"
 {% raw %}
 <p>Drag the icons around the canvas!</p>
 
-<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;"></canvas>
+<canvas id="myCanvas" width="1000" height="830" style="border:1px solid #000000;"></canvas>
 
 <script>
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        { src: 'fs.png', x: 50, y: 10, width: 100, height: 100, isDragging: false },
-        { src: 'pip.png', x: 200, y: 10, width: 100, height: 100, isDragging: false },
-        { src: 'sa.png', x: 350, y: 10, width: 100, height: 100, isDragging: false },
-        { src: 'wan.png', x: 500, y: 10, width: 100, height: 100, isDragging: false }
+        { src: 'adf.png', x: 50, y: 10, width: 100, height: 100, isDragging: false },
+        { src: 'func1.png', x: 200, y: 10, width: 100, height: 100, isDragging: false },
+        { src: 'pbi.png', x: 350, y: 10, width: 100, height: 100, isDragging: false },
+        { src: 'apim.png', x: 500, y: 10, width: 100, height: 100, isDragging: false }
     ];
     let dragIndex = -1;
 
@@ -104,7 +104,7 @@ sub-category: "Security"
     canvas {
         display: block;
         margin: 20px auto;
-        background: url('bg2.png') no-repeat center center;
+        background: url('arc1.png') no-repeat center center;
         background-size: cover;
         border: 5px solid #333;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
