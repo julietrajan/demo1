@@ -5,12 +5,21 @@ category: "Comic"
 sub-category: "Security"
 ---
 
-## Drag and Drop Canvas with Icons
+## Line of business extension
 
 {% raw %}
-<p>Drag the icons around the canvas!</p>
+<p>Line of business extension!</p>
 
 <canvas id="myCanvas" width="1000" height="830" style="border:1px solid #000000;"></canvas>
+
+The data flows through the solution as follows:
+
+<br> 1. Supplier data stored in Common Data Services (CDS) is moved to SQL via Data Factory.
+<br> 2. Purchase order (PO) data stored in ERP system is sent to Azure SQL database.
+<br> 3. Azure API Management is used to expose an Azure function to the Power Platform.
+<br> 4. Power Apps retrieves data from Azure SQL Database through the Azure Function being exposed by Azure API Management.
+<br> 5. ser reviews and updates POs in Power Apps and sends this data to suppliers through CSV exports.
+<br> 6. Power BI reports trends in supplier status.
 
 <script>
     const canvas = document.getElementById('myCanvas');
