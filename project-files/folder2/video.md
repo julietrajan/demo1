@@ -5,53 +5,36 @@ category: "Comic"
 sub-category: "Security"
 ---
 
-
-
 ## Drag and Drop Canvas with Icons
 {% raw %}
-<p>Drag the icons from the left and drop them onto the canvas on the right!</p>
+<p>Drag the icons around the canvas!</p>
 
-<div style="display: flex;">
-    <div id="iconContainer" style="width: 200px; border: 1px solid #000; padding: 10px;">
-        <img src="1.png" id="icon1" class="draggable-icon" width="100" height="100">
-        <img src="3.png" id="icon2" class="draggable-icon" width="100" height="100">
-        <img src="2.jpeg" id="icon3" class="draggable-icon" width="100" height="100">
-    </div>
-    <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000; margin-left: 20px;"></canvas>
-</div>
+<canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
 
 <script>
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
-    let images = [];
+    const images = [
+        { src: '1.png', x: 50, y: 50, width: 100, height: 100, isDragging: false },
+        { src: '3.png', x: 200, y: 50, width: 100, height: 100, isDragging: false },
+        { src: '2.jpeg', x: 350, y: 50, width: 100, height: 100, isDragging: false }
+    ];
     let dragIndex = -1;
-    let offsetX, offsetY;
 
-    document.querySelectorAll('.draggable-icon').forEach((img, index) => {
-        img.addEventListener('dragstart', (e) => {
-            dragIndex = index;
-            offsetX = e.offsetX;
-            offsetY = e.offsetY;
+    function loadImages(callback) {
+        let loadedImages = 0;
+        images.forEach((image, index) => {
+            const img = new Image();
+            img.src = image.src;
+            img.onload = () => {
+                images[index].img = img;
+                loadedImages++;
+                if (loadedImages === images.length) {
+                    callback();
+                }
+            };
         });
-    });
-
-    canvas.addEventListener('dragover', (e) => {
-        e.preventDefault();
-    });
-
-    canvas.addEventListener('drop', (e) => {
-        e.preventDefault();
-        const mousePos = getMousePos(canvas, e);
-        const img = document.querySelectorAll('.draggable-icon')[dragIndex];
-        images.push({
-            img: img,
-            x: mousePos.x - offsetX,
-            y: mousePos.y - offsetY,
-            width: img.width,
-            height: img.height
-        });
-        drawImages();
-    });
+    }
 
     function drawImages() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -67,20 +50,54 @@ sub-category: "Security"
             y: evt.clientY - rect.top
         };
     }
+
+    function isMouseInImage(mouse, image) {
+        return mouse.x > image.x && mouse.x < image.x + image.width &&
+               mouse.y > image.y && mouse.y < image.y + image.height;
+    }
+
+    canvas.addEventListener('mousedown', (evt) => {
+        const mousePos = getMousePos(canvas, evt);
+        images.forEach((image, index) => {
+            if (isMouseInImage(mousePos, image)) {
+                image.isDragging = true;
+                dragIndex = index;
+            }
+        });
+    });
+
+    canvas.addEventListener('mousemove', (evt) => {
+        if (dragIndex !== -1) {
+            const mousePos = getMousePos(canvas, evt);
+            const image = images[dragIndex];
+            image.x = mousePos.x - image.width / 2;
+            image.y = mousePos.y - image.height / 2;
+            drawImages();
+        }
+    });
+
+    canvas.addEventListener('mouseup', () => {
+        if (dragIndex !== -1) {
+            images[dragIndex].isDragging = false;
+            dragIndex = -1;
+        }
+    });
+
+    canvas.addEventListener('mouseout', () => {
+        if (dragIndex !== -1) {
+            images[dragIndex].isDragging = false;
+            dragIndex = -1;
+        }
+    });
+
+    loadImages(drawImages);
 </script>
 
 <style>
-    .draggable-icon {
-        margin: 10px 0;
-        cursor: grab;
-    }
-    .draggable-icon:active {
-        cursor: grabbing;
-    }
-    #iconContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    canvas {
+        display: block;
+        margin: 20px auto;
     }
 </style>
 {% endraw %}
+
