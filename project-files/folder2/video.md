@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "video"
+title: "video1"
 category: "Comic"
 sub-category: "Security"
 ---
@@ -8,15 +8,17 @@ sub-category: "Security"
   <img src="./aiusecase.png" alt="Superhero posing and standing">
 </a>
 
+### Question 1: Your organization is planning to implement AI solutions to boost employee productivity. The management wants to automate tasks like drafting documents, summarizing emails, and generating reports directly within existing tools like Word and Excel, without building custom integrations or requiring developers to intervene. Additionally, the solution must cater to the entire organization, scaling across departments seamlessly. What would be the most appropriate solution for this scenario?
 
      <form id="quizForm">
-        <h3>Question 1: Your organization is planning to implement AI solutions to boost employee productivity. The management wants to automate tasks like drafting documents, summarizing emails, and generating reports directly within existing tools like Word and Excel, without building custom integrations or requiring developers to intervene. Additionally, the solution must cater to the entire organization, scaling across departments seamlessly. What would be the most appropriate solution for this scenario?</h3>
+
         <input type="radio" name="q1" value="A"> A) Use Microsoft 365 Copilot to embed AI capabilities directly into existing tools for organization-wide productivity gains.<br>
         <input type="radio" name="q1" value="B"> B) Implement Role-aligned Copilots to address department-specific use cases like security or sales.<br>
         <input type="radio" name="q1" value="C"> C) Develop custom AI solutions using Azure AI Foundry to integrate advanced capabilities into Microsoft 365 apps.<br>
         <input type="radio" name="q1" value="D"> D) Build and train AI agents in Copilot Studio and deploy them for document and email automation.<br>
 
-        <h3>Question 2: A startup specializing in customer service automation wants to streamline how they create and deploy virtual agents to handle common queries. They require a solution that allows them to build agents with natural language capabilities without worrying about managing infrastructure or multiple subscriptions. The system should also allow them to test and deploy agents quickly to adapt to customer needs. Which option would fulfill all these requirements?</h3>
+### Question 2: A startup specializing in customer service automation wants to streamline how they create and deploy virtual agents to handle common queries. They require a solution that allows them to build agents with natural language capabilities without worrying about managing infrastructure or multiple subscriptions. The system should also allow them to test and deploy agents quickly to adapt to customer needs. Which option would fulfill all these requirements?
+
         <input type="radio" name="q2" value="A"> A) Utilize Copilot Studio to build, test, and deploy AI-powered agents through a simplified SaaS platform.<br>
         <input type="radio" name="q2" value="B"> B) Deploy Microsoft 365 Copilot to handle customer service automation and integrate it into their CRM.<br>
         <input type="radio" name="q2" value="C"> C) Leverage Azure OpenAI services to build custom APIs and handle natural language processing.<br>
