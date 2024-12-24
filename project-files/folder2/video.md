@@ -8,7 +8,7 @@ sub-category: "Security"
   <img src="./aiusecase.png" alt="Superhero posing and standing">
 </a>
 
-{% raw %}
+
      <form id="quizForm">
         <h3>Question 1: Your organization is planning to implement AI solutions to boost employee productivity. The management wants to automate tasks like drafting documents, summarizing emails, and generating reports directly within existing tools like Word and Excel, without building custom integrations or requiring developers to intervene. Additionally, the solution must cater to the entire organization, scaling across departments seamlessly. What would be the most appropriate solution for this scenario?</h3>
         <input type="radio" name="q1" value="A"> A) Use Microsoft 365 Copilot to embed AI capabilities directly into existing tools for organization-wide productivity gains.<br>
@@ -45,43 +45,61 @@ sub-category: "Security"
         <button type="button" onclick="clearAll()">Clear All</button>
     </form>
 
-    <script>
-        function checkAnswers() {
-            const answers = {
-                q1: 'A',
-                q2: 'A',
-                q3: 'B',
-                q4: 'B',
-                q5: 'Copilot Agents'
-            };
+  <style>
+  .correct {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
 
-            const form = document.getElementById('quizForm');
-            const formData = new FormData(form);
+  .incorrect {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+</style>
 
-            for (const [question, answer] of Object.entries(answers)) {
-                const userAnswer = formData.get(question);
-                const elements = form.elements[question];
+<script>
+  function checkAnswers() {
+    const answers = {
+      q1: "A",
+      q2: "A",
+      q3: "B",
+      q4: "B",
+      q5: "Copilot Agents",
+    };
 
-                if (elements.type === 'radio' || elements.type === 'select-one') {
-                    const options = elements.type === 'radio' ? form.querySelectorAll(`input[name="${question}"]`) : elements.options;
-                    for (const option of options) {
-                        if (option.value === userAnswer) {
-                            option.parentElement.classList.add(userAnswer === answer ? 'correct' : 'incorrect');
-                        }
-                    }
-                } else {
-                    elements.classList.add(userAnswer === answer ? 'correct' : 'incorrect');
-                }
-            }
-        }
+    const form = document.getElementById("quizForm");
+    const formData = new FormData(form);
 
-        function clearAll() {
-            const form = document.getElementById('quizForm');
-            form.reset();
-            const elements = form.querySelectorAll('.correct, .incorrect');
-            elements.forEach(element => {
-                element.classList.remove('correct', 'incorrect');
-            });
-        }
-    </script>
-{% endraw %}
+    Object.keys(answers).forEach((question) => {
+      const userAnswer = formData.get(question);
+      const element = form.elements[question];
+
+      if (element.type === "radio") {
+        const options = document.querySelectorAll(`input[name="${question}"]`);
+        options.forEach((option) => {
+          option.parentElement.classList.remove("correct", "incorrect");
+          if (option.value === answers[question]) {
+            option.parentElement.classList.add("correct");
+          } else if (option.checked) {
+            option.parentElement.classList.add("incorrect");
+          }
+        });
+      } else if (element.type === "select-one") {
+        element.classList.remove("correct", "incorrect");
+        element.classList.add(userAnswer === answers[question] ? "correct" : "incorrect");
+      } else if (element.type === "text") {
+        element.classList.remove("correct", "incorrect");
+        element.classList.add(userAnswer === answers[question] ? "correct" : "incorrect");
+      }
+    });
+  }
+
+  function clearAll() {
+    const form = document.getElementById("quizForm");
+    form.reset();
+    document.querySelectorAll(".correct, .incorrect").forEach((el) => {
+      el.classList.remove("correct", "incorrect");
+    });
+  }
+</script>
+
