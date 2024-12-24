@@ -4,96 +4,184 @@ title: "video1"
 category: "Comic"
 sub-category: "Security"
 ---
-{% raw %}
-<h1>Hangman Game</h1>
-<p>Guess the word by selecting the letters. You have 6 attempts!</p>
+## Question: Interactive way to write a code to analyse and transform data
 
-<div id="hangman-game">
-    <p id="word"></p>
-    <p id="message"></p>
-    <div id="letters"></div>
-    <p>Attempts left: <span id="attempts">6</span></p>
-    <button onclick="resetGame()">Reset Game</button>
-</div>
+<form id="petForm">
+  <label for="letterN"></label>
+  <input type="text" id="letterN" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO"></label>
+  <input type="text" id="letterO" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterT"></label>
+  <input type="text" id="letterT" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterE"></label>
+  <input type="text" id="letterE" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterB"></label>
+  <input type="text" id="letterB" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO2"></label>
+  <input type="text" id="letterO2" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterO3"></label>
+  <input type="text" id="letterO3" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <label for="letterK"></label>
+  <input type="text" id="letterK" maxlength="1" class="letter-input" oninput="this.value = this.value.toUpperCase()">
+  <br>
+  <button type="button" onclick="checkAnswer()">Submit</button>
+  <button type="button" onclick="clearAll()">Clear All</button>
+  <button type="button" onclick="fillCorrectAnswer()">Fill Correct Answer</button>
+</form>
 
-<script>
-    const words = ["javascript", "jekyll", "github", "markdown", "hangman"];
-    let selectedWord = words[Math.floor(Math.random() * words.length)];
-    let attempts = 6;
-    let guessedLetters = [];
-
-    function displayWord() {
-        const wordDisplay = selectedWord.split('').map(letter => guessedLetters.includes(letter) ? letter : '_').join(' ');
-        document.getElementById('word').innerText = wordDisplay;
-    }
-
-    function displayLetters() {
-        const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-        const lettersContainer = document.getElementById('letters');
-        lettersContainer.innerHTML = '';
-        letters.forEach(letter => {
-            const button = document.createElement('button');
-            button.innerText = letter;
-            button.onclick = () => guessLetter(letter);
-            lettersContainer.appendChild(button);
-        });
-    }
-
-    function guessLetter(letter) {
-        if (guessedLetters.includes(letter) || attempts === 0) return;
-        guessedLetters.push(letter);
-        if (!selectedWord.includes(letter)) {
-            attempts--;
-            document.getElementById('attempts').innerText = attempts;
-        }
-        displayWord();
-        checkGameStatus();
-    }
-
-    function checkGameStatus() {
-        const wordDisplay = document.getElementById('word').innerText;
-        if (!wordDisplay.includes('_')) {
-            document.getElementById('message').innerText = 'Congratulations! You guessed the word!';
-            disableButtons();
-        } else if (attempts === 0) {
-            document.getElementById('message').innerText = `Game Over! The word was "${selectedWord}".`;
-            disableButtons();
-        }
-    }
-
-    function disableButtons() {
-        const buttons = document.querySelectorAll('#letters button');
-        buttons.forEach(button => button.disabled = true);
-    }
-
-    function resetGame() {
-        selectedWord = words[Math.floor(Math.random() * words.length)];
-        attempts = 6;
-        guessedLetters = [];
-        document.getElementById('attempts').innerText = attempts;
-        document.getElementById('message').innerText = '';
-        displayWord();
-        displayLetters();
-    }
-
-    // Initialize game
-    displayWord();
-    displayLetters();
-</script>
+<p id="result"></p>
 
 <style>
-    #letters button {
-        margin: 5px;
-        padding: 10px;
-        font-size: 16px;
-    }
-    #word {
-        font-size: 24px;
-        letter-spacing: 10px;
-    }
-    #message {
-        font-size: 20px;
-        color: green;
-    }
+  .letter-input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: border-color 0.3s;
+  }
+
+  .letter-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  button {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #result {
+    margin-top: 10px;
+    font-size: 18px;
+  }
 </style>
-{% endraw %}
+
+<script>
+  function checkAnswer() {
+    var n = document.getElementById('letterN').value.toUpperCase();
+    var o = document.getElementById('letterO').value.toUpperCase();
+    var t = document.getElementById('letterT').value.toUpperCase();
+    var e = document.getElementById('letterE').value.toUpperCase();
+    var b = document.getElementById('letterB').value.toUpperCase();
+    var o2 = document.getElementById('letterO2').value.toUpperCase();
+    var o3 = document.getElementById('letterO3').value.toUpperCase();
+    var k = document.getElementById('letterK').value.toUpperCase();
+    var isCorrect = true;
+
+    if (n !== 'N') {
+      document.getElementById('letterN').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterN').style.color = 'black';
+    }
+
+    if (o !== 'O') {
+      document.getElementById('letterO').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterO').style.color = 'black';
+    }
+
+    if (t !== 'T') {
+      document.getElementById('letterT').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterT').style.color = 'black';
+    }
+
+    if (e !== 'E') {
+      document.getElementById('letterE').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterE').style.color = 'black';
+    }
+
+    if (b !== 'B') {
+      document.getElementById('letterB').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterB').style.color = 'black';
+    }
+
+    if (o2 !== 'O') {
+      document.getElementById('letterO2').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterO2').style.color = 'black';
+    }
+
+     if (o3 !== 'O') {
+      document.getElementById('letterO3').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterO3').style.color = 'black';
+    }
+
+    if (k !== 'K') {
+      document.getElementById('letterK').style.color = 'red';
+      isCorrect = false;
+    } else {
+      document.getElementById('letterK').style.color = 'black';
+    }
+
+    if (isCorrect) {
+      document.getElementById('result').innerText = 'Correct!';
+    } else {
+      document.getElementById('result').innerText = 'Try Again';
+    }
+  }
+
+  function clearAll() {
+    document.getElementById('letterN').value = '';
+    document.getElementById('letterO').value = '';
+    document.getElementById('letterT').value = '';
+    document.getElementById('letterE').value = '';
+    document.getElementById('letterB').value = '';
+    document.getElementById('letterO2').value = '';
+    document.getElementById('letterO3').value = '';
+    document.getElementById('letterK').value = '';
+    document.getElementById('letterN').style.color = 'black';
+    document.getElementById('letterO').style.color = 'black';
+    document.getElementById('letterT').style.color = 'black';
+    document.getElementById('letterE').style.color = 'black';
+    document.getElementById('letterB').style.color = 'black';
+    document.getElementById('letterO2').style.color = 'black';
+    document.getElementById('letterO3').style.color = 'black';
+    document.getElementById('letterK').style.color = 'black';
+    document.getElementById('result').innerText = '';
+  }
+
+  function fillCorrectAnswer() {
+    document.getElementById('letterN').value = 'N';
+    document.getElementById('letterO').value = 'O';
+    document.getElementById('letterT').value = 'T';
+    document.getElementById('letterE').value = 'E';
+    document.getElementById('letterB').value = 'B';
+    document.getElementById('letterO2').value = 'O';
+    document.getElementById('letterO3').value = 'O';
+    document.getElementById('letterK').value = 'K';
+    document.getElementById('letterN').style.color = 'black';
+    document.getElementById('letterO').style.color = 'black';
+    document.getElementById('letterT').style.color = 'black';
+    document.getElementById('letterE').style.color = 'black';
+    document.getElementById('letterB').style.color = 'black';
+    document.getElementById('letterO2').style.color = 'black';
+    document.getElementById('letterO3').style.color = 'black';
+    document.getElementById('letterK').style.color = 'black';
+    document.getElementById('result').innerText = '';
+  }
+</script>
