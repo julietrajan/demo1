@@ -4,7 +4,6 @@ title: "video1"
 category: "Comic"
 sub-category: "Security"
 ---
-## Introduction to the Line of Business Extension Game
 
 Welcome to the **Line of Business Extension Game**! This interactive game is designed to help you understand the flow of data through a business solution using various Azure services. You'll be able to drag and drop icons representing different Azure services onto a canvas, simulating how data moves and is processed within a business environment.
 
@@ -22,7 +21,10 @@ Welcome to the **Line of Business Extension Game**! This interactive game is des
 
 Enjoy the game and learn how these Azure services work together to streamline business processes! If you have any questions or need further assistance, feel free to ask. Happy learning! 😊
 
+
+
 {% raw %}
+
 
 <canvas id="myCanvas" width="1000" height="830" style="border:1px solid #000000;"></canvas>
 
@@ -34,6 +36,10 @@ Enjoy the game and learn how these Azure services work together to streamline bu
 4. Power Apps retrieves data from the Azure SQL Database through the Azure Function being exposed by Azure API Management.
 5. User reviews and updates POs in Power Apps and sends this data to suppliers through CSV exports.
 6. Power BI reports trends in supplier status.
+
+
+<button id="showSolutionButton" onclick="showSolution()">Show Solution</button>
+<div id="solutionImageContainer"></div>
 
 <script>
     const canvas = document.getElementById('myCanvas');
@@ -151,6 +157,16 @@ Enjoy the game and learn how these Azure services work together to streamline bu
         }
     });
 
+    function showSolution() {
+        const solutionImageContainer = document.getElementById('solutionImageContainer');
+        const img = document.createElement('img');
+        img.src = '1.png';
+        img.alt = 'Solution';
+        img.style.marginTop = '20px';
+        solutionImageContainer.innerHTML = '';
+        solutionImageContainer.appendChild(img);
+    }
+
     loadImages(drawImages);
 </script>
 
@@ -193,6 +209,27 @@ Enjoy the game and learn how these Azure services work together to streamline bu
         border: 2px solid #333;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #showSolutionButton {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #showSolutionButton:hover {
+        background-color: #0056b3;
+    }
+
+    #solutionImageContainer {
+        text-align: center;
     }
 </style>
 {% endraw %}
