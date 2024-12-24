@@ -6,18 +6,20 @@ sub-category: "Security"
 ---
 
 ## Drag and Drop Canvas with Icons
+
 {% raw %}
 <p>Drag the icons around the canvas!</p>
 
-<canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
+<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;"></canvas>
 
 <script>
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        { src: '1.png', x: 50, y: 50, width: 100, height: 100, isDragging: false },
-        { src: '3.png', x: 200, y: 50, width: 100, height: 100, isDragging: false },
-        { src: '2.jpeg', x: 350, y: 50, width: 100, height: 100, isDragging: false }
+        { src: 'fs.png', x: 50, y: 10, width: 100, height: 100, isDragging: false },
+        { src: 'pip.png', x: 200, y: 10, width: 100, height: 100, isDragging: false },
+        { src: 'sa.png', x: 350, y: 10, width: 100, height: 100, isDragging: false },
+        { src: 'wan.png', x: 500, y: 10, width: 100, height: 100, isDragging: false }
     ];
     let dragIndex = -1;
 
@@ -94,10 +96,43 @@ sub-category: "Security"
 </script>
 
 <style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
     canvas {
         display: block;
         margin: 20px auto;
+        background: url('bg2.png') no-repeat center center;
+        background-size: cover;
+        border: 5px solid #333;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .draggable-icon {
+        margin: 10px 0;
+        cursor: grab;
+        border: 2px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s;
+    }
+
+    .draggable-icon:active {
+        cursor: grabbing;
+        transform: scale(1.1);
+    }
+
+    #iconContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        border: 2px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 </style>
 {% endraw %}
-
