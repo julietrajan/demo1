@@ -4,7 +4,6 @@ title: "video1"
 category: "Comic"
 sub-category: "Security"
 ---
-
 ## Line of business extension
 
 {% raw %}
@@ -18,17 +17,17 @@ The data flows through the solution as follows:
 <br> 2. Purchase order (PO) data stored in ERP system is sent to Azure SQL database.
 <br> 3. Azure API Management is used to expose an Azure function to the Power Platform.
 <br> 4. Power Apps retrieves data from Azure SQL Database through the Azure Function being exposed by Azure API Management.
-<br> 5. ser reviews and updates POs in Power Apps and sends this data to suppliers through CSV exports.
+<br> 5. User reviews and updates POs in Power Apps and sends this data to suppliers through CSV exports.
 <br> 6. Power BI reports trends in supplier status.
 
 <script>
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        { src: 'adf.png', x: 50, y: 10, width: 100, height: 100, isDragging: false },
-        { src: 'func1.png', x: 200, y: 10, width: 100, height: 100, isDragging: false },
-        { src: 'pbi.png', x: 350, y: 10, width: 100, height: 100, isDragging: false },
-        { src: 'apim.png', x: 500, y: 10, width: 100, height: 100, isDragging: false }
+        { src: 'adf.png', x: 50, y: 10, width: 50, height: 50, isDragging: false },
+        { src: 'func1.png', x: 200, y: 10, width: 50, height: 50, isDragging: false },
+        { src: 'pbi.png', x: 350, y: 10, width: 50, height: 50, isDragging: false },
+        { src: 'apim.png', x: 500, y: 10, width: 50, height: 50, isDragging: false }
     ];
     let dragIndex = -1;
 
@@ -51,6 +50,10 @@ The data flows through the solution as follows:
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         images.forEach(image => {
             ctx.drawImage(image.img, image.x, image.y, image.width, image.height);
+            // Draw border around the image
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(image.x, image.y, image.width, image.height);
         });
     }
 
@@ -126,6 +129,7 @@ The data flows through the solution as follows:
         border-radius: 10px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         transition: transform 0.2s;
+        background-color: rgba(255, 255, 255, 0.8); /* Light background to differentiate from canvas */
     }
 
     .draggable-icon:active {
