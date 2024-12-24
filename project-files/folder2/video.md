@@ -23,7 +23,6 @@ Welcome to the **Line of Business Extension Game**! This interactive game is des
 Enjoy the game and learn how these Azure services work together to streamline business processes! If you have any questions or need further assistance, feel free to ask. Happy learning! 😊
 
 {% raw %}
-<p>Line of business extension!</p>
 
 <canvas id="myCanvas" width="1000" height="830" style="border:1px solid #000000;"></canvas>
 
