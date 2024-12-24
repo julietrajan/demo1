@@ -14,9 +14,9 @@ sub-category: "Security"
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        { src: 'images/1.png', x: 50, y: 50, width: 100, height: 100, isDragging: false },
-        { src: 'images/3.png', x: 200, y: 50, width: 100, height: 100, isDragging: false },
-        { src: 'images/2.jpeg', x: 350, y: 50, width: 100, height: 100, isDragging: false }
+        { src: '1.png', x: 50, y: 50, width: 100, height: 100, isDragging: false },
+        { src: '3.png', x: 200, y: 50, width: 100, height: 100, isDragging: false },
+        { src: '2.jpeg', x: 350, y: 50, width: 100, height: 100, isDragging: false }
     ];
     let dragIndex = -1;
 
