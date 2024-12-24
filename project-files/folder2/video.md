@@ -8,7 +8,7 @@ sub-category: "Security"
   <img src="./aiusecase.png" alt="Superhero posing and standing">
 </a>
 
-
+{% raw %}
      <form id="quizForm">
         <h3>Question 1: Your organization is planning to implement AI solutions to boost employee productivity. The management wants to automate tasks like drafting documents, summarizing emails, and generating reports directly within existing tools like Word and Excel, without building custom integrations or requiring developers to intervene. Additionally, the solution must cater to the entire organization, scaling across departments seamlessly. What would be the most appropriate solution for this scenario?</h3>
         <input type="radio" name="q1" value="A"> A) Use Microsoft 365 Copilot to embed AI capabilities directly into existing tools for organization-wide productivity gains.<br>
@@ -84,3 +84,4 @@ sub-category: "Security"
             });
         }
     </script>
+{% endraw %}
