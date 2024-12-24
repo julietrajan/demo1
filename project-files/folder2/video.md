@@ -160,7 +160,7 @@ Enjoy the game and learn how these Azure services work together to streamline bu
     function showSolution() {
         const solutionImageContainer = document.getElementById('solutionImageContainer');
         const img = document.createElement('img');
-        img.src = '1.png';
+        img.src = 'soln1.png';
         img.alt = 'Solution';
         img.style.marginTop = '20px';
         solutionImageContainer.innerHTML = '';
