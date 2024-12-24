@@ -50,10 +50,7 @@ The data flows through the solution as follows:
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         images.forEach(image => {
             ctx.drawImage(image.img, image.x, image.y, image.width, image.height);
-            // Draw border around the image
-            ctx.strokeStyle = '#333';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(image.x, image.y, image.width, image.height);
+            // Remove border drawing code
         });
         // Draw 3D divider line
         draw3DDivider();
@@ -148,7 +145,7 @@ The data flows through the solution as follows:
     .draggable-icon {
         margin: 10px 0;
         cursor: grab;
-     
+        /* border: 2px solid #333; */ /* Remove this line to remove the black border */
         border-radius: 10px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         transition: transform 0.2s;
