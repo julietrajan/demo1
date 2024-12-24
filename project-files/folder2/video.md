@@ -24,10 +24,10 @@ The data flows through the solution as follows:
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        { src: 'adf.png', x: 50, y: 10, width: 60, height: 60, isDragging: false },
-        { src: 'func1.png', x: 100, y: 10, width: 60, height: 60, isDragging: false },
-        { src: 'pbi.png', x: 150, y: 10, width: 60, height: 60, isDragging: false },
-        { src: 'apim.png', x: 200, y: 10, width: 60, height: 60, isDragging: false }
+        { src: 'adf.png', x: 50, y: 10, width: 50, height: 50, isDragging: false },
+        { src: 'func1.png', x: 200, y: 10, width: 50, height: 50, isDragging: false },
+        { src: 'pbi.png', x: 350, y: 10, width: 50, height: 50, isDragging: false },
+        { src: 'apim.png', x: 500, y: 10, width: 50, height: 50, isDragging: false }
     ];
     let dragIndex = -1;
 
@@ -55,12 +55,28 @@ The data flows through the solution as follows:
             ctx.lineWidth = 2;
             ctx.strokeRect(image.x, image.y, image.width, image.height);
         });
-        // Draw divider line
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 2;
+        // Draw 3D divider line
+        draw3DDivider();
+    }
+
+    function draw3DDivider() {
+        const gradient = ctx.createLinearGradient(0, 80, canvas.width, 80);
+        gradient.addColorStop(0, '#d3d3d3');
+        gradient.addColorStop(0.5, '#ffffff');
+        gradient.addColorStop(1, '#d3d3d3');
+
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 4;
         ctx.beginPath();
         ctx.moveTo(0, 80); // Adjust the y-coordinate as needed
         ctx.lineTo(canvas.width, 80);
+        ctx.stroke();
+
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(0, 82); // Slightly below the main line for shadow effect
+        ctx.lineTo(canvas.width, 82);
         ctx.stroke();
     }
 
