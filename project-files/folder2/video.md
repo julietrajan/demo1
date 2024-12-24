@@ -8,29 +8,6 @@ sub-category: "Security"
 
 Welcome to the **Line of Business Extension Game**! This interactive game is designed to help you understand the flow of data through a business solution using various Azure services. You'll be able to drag and drop icons representing different Azure services onto a canvas, simulating how data moves and is processed within a business environment.
 
-## How to Play
-
-1. **Objective:**
-   - Your goal is to arrange the icons on the canvas to represent the correct flow of data through the solution.
-
-2. **Icons:**
-   - The icons at the top of the canvas represent different Azure services:
-     - **Azure Data Factory**: Moves supplier data stored in Common Data Services (CDS) to SQL via Data Factory.
-     - **Azure Function**: Exposes an Azure function to the Power Platform through Azure API Management.
-     - **Power BI**: Reports trends in supplier status.
-     - **API Management**: Exposes Azure functions to the Power Platform.
-
-3. **Drag and Drop:**
-   - Click and hold an icon to drag it.
-   - Move the icon to the desired location on the canvas.
-   - Release the mouse button to drop the icon.
-
-4. **Hover Information:**
-   - Hover over an icon to see its name and understand its role in the data flow.
-
-5. **Divider:**
-   - The light gray 3D divider separates the initial icon placement area from the rest of the canvas. Arrange the icons below this divider to simulate the data flow.
-
 ## Steps to Play
 
 1. **Start by understanding the data flow:**
@@ -42,6 +19,14 @@ Welcome to the **Line of Business Extension Game**! This interactive game is des
 3. **Review and adjust:**
    - Ensure that the icons are placed correctly to reflect the data flow accurately.
 
+
+Enjoy the game and learn how these Azure services work together to streamline business processes! If you have any questions or need further assistance, feel free to ask. Happy learning! 😊
+
+{% raw %}
+<p>Line of business extension!</p>
+
+<canvas id="myCanvas" width="1000" height="830" style="border:1px solid #000000;"></canvas>
+
 ## Data Flow Steps
 
 1. Supplier data stored in Common Data Services (CDS) is moved to SQL via Data Factory.
@@ -50,13 +35,6 @@ Welcome to the **Line of Business Extension Game**! This interactive game is des
 4. Power Apps retrieves data from the Azure SQL Database through the Azure Function being exposed by Azure API Management.
 5. User reviews and updates POs in Power Apps and sends this data to suppliers through CSV exports.
 6. Power BI reports trends in supplier status.
-
-Enjoy the game and learn how these Azure services work together to streamline business processes! If you have any questions or need further assistance, feel free to ask. Happy learning! 😊
-
-{% raw %}
-<p>Line of business extension!</p>
-
-<canvas id="myCanvas" width="1000" height="830" style="border:1px solid #000000;"></canvas>
 
 <script>
     const canvas = document.getElementById('myCanvas');
