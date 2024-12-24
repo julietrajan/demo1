@@ -50,10 +50,6 @@ The data flows through the solution as follows:
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         images.forEach(image => {
             ctx.drawImage(image.img, image.x, image.y, image.width, image.height);
-            // Draw border around the image
-            ctx.strokeStyle = '#333';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(image.x, image.y, image.width, image.height);
         });
         // Draw 3D divider line
         draw3DDivider();
@@ -110,6 +106,19 @@ The data flows through the solution as follows:
             image.x = mousePos.x - image.width / 2;
             image.y = mousePos.y - image.height / 2;
             drawImages();
+        } else {
+            const mousePos = getMousePos(canvas, evt);
+            let hoveredImage = null;
+            images.forEach(image => {
+                if (isMouseInImage(mousePos, image)) {
+                    hoveredImage = image;
+                }
+            });
+            if (hoveredImage) {
+                canvas.title = hoveredImage.name;
+            } else {
+                canvas.title = '';
+            }
         }
     });
 
