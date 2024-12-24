@@ -24,10 +24,10 @@ The data flows through the solution as follows:
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        { src: 'adf.png', x: 50, y: 10, width: 50, height: 50, isDragging: false },
-        { src: 'func1.png', x: 200, y: 10, width: 50, height: 50, isDragging: false },
-        { src: 'pbi.png', x: 350, y: 10, width: 50, height: 50, isDragging: false },
-        { src: 'apim.png', x: 500, y: 10, width: 50, height: 50, isDragging: false }
+        { src: 'adf.png', x: 50, y: 10, width: 50, height: 50, isDragging: false, name: 'Azure Data Factory' },
+        { src: 'func1.png', x: 200, y: 10, width: 50, height: 50, isDragging: false, name: 'Azure Function' },
+        { src: 'pbi.png', x: 350, y: 10, width: 50, height: 50, isDragging: false, name: 'Power BI' },
+        { src: 'apim.png', x: 500, y: 10, width: 50, height: 50, isDragging: false, name: 'API Management' }
     ];
     let dragIndex = -1;
 
@@ -50,7 +50,10 @@ The data flows through the solution as follows:
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         images.forEach(image => {
             ctx.drawImage(image.img, image.x, image.y, image.width, image.height);
-            // Remove border drawing code
+            // Draw border around the image
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(image.x, image.y, image.width, image.height);
         });
         // Draw 3D divider line
         draw3DDivider();
