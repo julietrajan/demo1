@@ -8,100 +8,176 @@ sub-category: "Security"
   <img src="./aiusecase.png" alt="Superhero posing and standing">
 </a>
 
-### Question 1: Your organization is planning to implement AI solutions to boost employee productivity. The management wants to automate tasks like drafting documents, summarizing emails, and generating reports directly within existing tools like Word and Excel, without building custom integrations or requiring developers to intervene. Additionally, the solution must cater to the entire organization, scaling across departments seamlessly. What would be the most appropriate solution for this scenario?
+### Question 1:
+**Your organization is planning to implement AI solutions to boost employee productivity. The management wants to automate tasks like drafting documents, summarizing emails, and generating reports directly within existing tools like Word and Excel, without building custom integrations or requiring developers to intervene. Additionally, the solution must cater to the entire organization, scaling across departments seamlessly. What would be the most appropriate solution for this scenario?**
 
-     <form id="quizForm">
+<form id="quizForm1">
+  <input type="radio" id="q1a" name="q1" value="A">
+  <label for="q1a">A. Use Microsoft 365 Copilot to embed AI capabilities directly into existing tools for organization-wide productivity gains.</label><br>
+  <input type="radio" id="q1b" name="q1" value="B">
+  <label for="q1b">B. Implement Role-aligned Copilots to address department-specific use cases like security or sales.</label><br>
+  <input type="radio" id="q1c" name="q1" value="C">
+  <label for="q1c">C. Develop custom AI solutions using Azure AI Foundry to integrate advanced capabilities into Microsoft 365 apps.</label><br>
+  <input type="radio" id="q1d" name="q1" value="D">
+  <label for="q1d">D. Build and train AI agents in Copilot Studio and deploy them for document and email automation.</label><br>
+  <button type="button" onclick="checkAnswer1()" class="styled-button">Submit</button>
+</form>
 
-        <input type="radio" name="q1" value="A"> A) Use Microsoft 365 Copilot to embed AI capabilities directly into existing tools for organization-wide productivity gains.<br>
-        <input type="radio" name="q1" value="B"> B) Implement Role-aligned Copilots to address department-specific use cases like security or sales.<br>
-        <input type="radio" name="q1" value="C"> C) Develop custom AI solutions using Azure AI Foundry to integrate advanced capabilities into Microsoft 365 apps.<br>
-        <input type="radio" name="q1" value="D"> D) Build and train AI agents in Copilot Studio and deploy them for document and email automation.<br>
+<p id="result1"></p>
 
-### Question 2: A startup specializing in customer service automation wants to streamline how they create and deploy virtual agents to handle common queries. They require a solution that allows them to build agents with natural language capabilities without worrying about managing infrastructure or multiple subscriptions. The system should also allow them to test and deploy agents quickly to adapt to customer needs. Which option would fulfill all these requirements?
+### Question 2:
+**A startup specializing in customer service automation wants to streamline how they create and deploy virtual agents to handle common queries. They require a solution that allows them to build agents with natural language capabilities without worrying about managing infrastructure or multiple subscriptions. The system should also allow them to test and deploy agents quickly to adapt to customer needs. Which option would fulfill all these requirements?**
 
-        <input type="radio" name="q2" value="A"> A) Utilize Copilot Studio to build, test, and deploy AI-powered agents through a simplified SaaS platform.<br>
-        <input type="radio" name="q2" value="B"> B) Deploy Microsoft 365 Copilot to handle customer service automation and integrate it into their CRM.<br>
-        <input type="radio" name="q2" value="C"> C) Leverage Azure OpenAI services to build custom APIs and handle natural language processing.<br>
-        <input type="radio" name="q2" value="D"> D) Use Role-aligned Copilots to deploy agents for customer service in specific roles like sales or finance.<br>
+<form id="quizForm2">
+  <input type="radio" id="q2a" name="q2" value="A">
+  <label for="q2a">A. Utilize Copilot Studio to build, test, and deploy AI-powered agents through a simplified SaaS platform.</label><br>
+  <input type="radio" id="q2b" name="q2" value="B">
+  <label for="q2b">B. Deploy Microsoft 365 Copilot to handle customer service automation and integrate it into their CRM.</label><br>
+  <input type="radio" id="q2c" name="q2" value="C">
+  <label for="q2c">C. Leverage Azure OpenAI services to build custom APIs and handle natural language processing.</label><br>
+  <input type="radio" id="q2d" name="q2" value="D">
+  <label for="q2d">D. Use Role-aligned Copilots to deploy agents for customer service in specific roles like sales or finance.</label><br>
+  <button type="button" onclick="checkAnswer2()" class="styled-button">Submit</button>
+</form>
 
-        <h3>Question 3: You are a developer in an enterprise that already uses Microsoft 365 Copilot. Your team needs to enhance Copilot's functionality by adding custom knowledge about your company’s products and integrating it with existing CRM systems. Which tool would you choose?</h3>
-        <select name="q3">
-            <option value="A">A) Copilot Studio</option>
-            <option value="B">B) Extensibility tools for Microsoft 365 Copilot</option>
-            <option value="C">C) Role-aligned Copilots</option>
-            <option value="D">D) Azure AI Foundry</option>
-        </select>
+<p id="result2"></p>
 
-        <h3>Question 4: A tech company is developing a new application that requires advanced natural language processing, image generation, and speech-to-text capabilities. They want full access to pre-trained models like GPT, DALL-E, and Whisper via REST APIs to integrate these functionalities into their custom software. The company also needs flexibility to fine-tune models and implement specific use cases such as content moderation and custom chatbot development. Which solution should they choose?</h3>
-        <select name="q4">
-            <option value="A">A) Azure AI Foundry</option>
-            <option value="B">B) Azure OpenAI</option>
-            <option value="C">C) Copilot Studio</option>
-            <option value="D">D) Extensibility tools for Microsoft 365 Copilot</option>
-        </select>
+### Question 3:
+**You are a developer in an enterprise that already uses Microsoft 365 Copilot. Your team needs to enhance Copilot's functionality by adding custom knowledge about your company’s products and integrating it with existing CRM systems. Which tool would you choose?**
 
-        <h3>Question 5: Your organization needs a tool to create and deploy conversational AI agents to automate customer support. The tool should allow non-technical users to build agents using natural language inputs without requiring coding expertise. The solution should also streamline the testing and deployment process, bundling all necessary services under a unified pricing model. The ideal tool for this requirement is ________.</h3>
-        <input type="text" name="q5"><br><br>
+<form id="quizForm3">
+  <input type="radio" id="q3a" name="q3" value="A">
+  <label for="q3a">A. Copilot Studio</label><br>
+  <input type="radio" id="q3b" name="q3" value="B">
+  <label for="q3b">B. Extensibility tools for Microsoft 365 Copilot</label><br>
+  <input type="radio" id="q3c" name="q3" value="C">
+  <label for="q3c">C. Role-aligned Copilots</label><br>
+  <input type="radio" id="q3d" name="q3" value="D">
+  <label for="q3d">D. Azure AI Foundry</label><br>
+  <button type="button" onclick="checkAnswer3()" class="styled-button">Submit</button>
+</form>
 
-        <button type="button" onclick="checkAnswers()">Submit</button>
-        <button type="button" onclick="clearAll()">Clear All</button>
-    </form>
+<p id="result3"></p>
 
-  <style>
-  .correct {
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-  }
+### Question 4:
+**A tech company is developing a new application that requires advanced natural language processing, image generation, and speech-to-text capabilities. They want full access to pre-trained models like GPT, DALL-E, and Whisper via REST APIs to integrate these functionalities into their custom software. The company also needs flexibility to fine-tune models and implement specific use cases such as content moderation and custom chatbot development. Which solution should they choose?**
 
-  .incorrect {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-  }
-</style>
+<form id="quizForm4">
+  <input type="radio" id="q4a" name="q4" value="A">
+  <label for="q4a">A. Azure AI Foundry</label><br>
+  <input type="radio" id="q4b" name="q4" value="B">
+  <label for="q4b">B. Azure OpenAI</label><br>
+  <input type="radio" id="q4c" name="q4" value="C">
+  <label for="q4c">C. Copilot Studio</label><br>
+  <input type="radio" id="q4d" name="q4" value="D">
+  <label for="q4d">D. Extensibility tools for Microsoft 365 Copilot</label><br>
+  <button type="button" onclick="checkAnswer4()" class="styled-button">Submit</button>
+</form>
+
+<p id="result4"></p>
 
 <script>
-  function checkAnswers() {
-    const answers = {
-      q1: "A",
-      q2: "A",
-      q3: "B",
-      q4: "B",
-      q5: "Copilot Agents",
-    };
+  function checkAnswer1() {
+    var radios = document.getElementsByName('q1');
+    var correctAnswer = 'A';
+    var result = document.getElementById('result1');
+    var selected = false;
 
-    const form = document.getElementById("quizForm");
-    const formData = new FormData(form);
-
-    Object.keys(answers).forEach((question) => {
-      const userAnswer = formData.get(question);
-      const element = form.elements[question];
-
-      if (element.type === "radio") {
-        const options = document.querySelectorAll(`input[name="${question}"]`);
-        options.forEach((option) => {
-          option.parentElement.classList.remove("correct", "incorrect");
-          if (option.value === answers[question]) {
-            option.parentElement.classList.add("correct");
-          } else if (option.checked) {
-            option.parentElement.classList.add("incorrect");
-          }
-        });
-      } else if (element.type === "select-one") {
-        element.classList.remove("correct", "incorrect");
-        element.classList.add(userAnswer === answers[question] ? "correct" : "incorrect");
-      } else if (element.type === "text") {
-        element.classList.remove("correct", "incorrect");
-        element.classList.add(userAnswer === answers[question] ? "correct" : "incorrect");
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        selected = true;
+        if (radios[i].value === correctAnswer) {
+          result.textContent = 'Correct!';
+          result.style.color = 'green';
+        } else {
+          result.textContent = 'Incorrect. Try again!';
+          result.style.color = 'red';
+        }
+        break;
       }
-    });
+    }
+
+    if (!selected) {
+      result.textContent = 'Please select an answer.';
+      result.style.color = 'orange';
+    }
   }
 
-  function clearAll() {
-    const form = document.getElementById("quizForm");
-    form.reset();
-    document.querySelectorAll(".correct, .incorrect").forEach((el) => {
-      el.classList.remove("correct", "incorrect");
-    });
+  function checkAnswer2() {
+    var radios = document.getElementsByName('q2');
+    var correctAnswer = 'A';
+    var result = document.getElementById('result2');
+    var selected = false;
+
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        selected = true;
+        if (radios[i].value === correctAnswer) {
+          result.textContent = 'Correct!';
+          result.style.color = 'green';
+        } else {
+          result.textContent = 'Incorrect. Try again!';
+          result.style.color = 'red';
+        }
+        break;
+      }
+    }
+
+    if (!selected) {
+      result.textContent = 'Please select an answer.';
+      result.style.color = 'orange';
+    }
+  }
+
+  function checkAnswer3() {
+    var radios = document.getElementsByName('q3');
+    var correctAnswer = 'B';
+    var result = document.getElementById('result3');
+    var selected = false;
+
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        selected = true;
+        if (radios[i].value === correctAnswer) {
+          result.textContent = 'Correct!';
+          result.style.color = 'green';
+        } else {
+          result.textContent = 'Incorrect. Try again!';
+          result.style.color = 'red';
+        }
+        break;
+      }
+    }
+
+    if (!selected) {
+      result.textContent = 'Please select an answer.';
+      result.style.color = 'orange';
+    }
+  }
+
+  function checkAnswer4() {
+    var radios = document.getElementsByName('q4');
+    var correctAnswer = 'B';
+    var result = document.getElementById('result4');
+    var selected = false;
+
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        selected = true;
+        if (radios[i].value === correctAnswer) {
+          result.textContent = 'Correct!';
+          result.style.color = 'green';
+        } else {
+          result.textContent = 'Incorrect. Try again!';
+          result.style.color = 'red';
+        }
+        break;
+      }
+    }
+
+    if (!selected) {
+      result.textContent = 'Please select an answer.';
+      result.style.color = 'orange';
+    }
   }
 </script>
-
