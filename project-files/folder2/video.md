@@ -5,7 +5,7 @@ category: "Comic"
 sub-category: "Security"
 ---
 ## Drag and Drop Canvas with Icons
-
+{% raw %}
 <p>Drag the icons around the canvas!</p>
 
 <canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
