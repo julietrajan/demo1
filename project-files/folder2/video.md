@@ -13,9 +13,9 @@ sub-category: "Security"
 
 <div style="display: flex;">
     <div id="iconContainer" style="width: 200px; border: 1px solid #000; padding: 10px;">
-        <img src="images/icon1.png" id="icon1" class="draggable-icon" width="100" height="100">
-        <img src="images/icon2.png" id="icon2" class="draggable-icon" width="100" height="100">
-        <img src="images/icon3.png" id="icon3" class="draggable-icon" width="100" height="100">
+        <img src="1.png" id="icon1" class="draggable-icon" width="100" height="100">
+        <img src="3.png" id="icon2" class="draggable-icon" width="100" height="100">
+        <img src="2.jpeg" id="icon3" class="draggable-icon" width="100" height="100">
     </div>
     <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000; margin-left: 20px;"></canvas>
 </div>
