@@ -5,36 +5,36 @@ category: "Case Study"
 sub-category: "Security"
 courses: [SC-200,SC-300, AZ-500]
 ---
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag and Drop Example</title>
+    <title>Drag and Drop Text Example</title>
     <style>
-        .square {
-            width: 50px;
-            height: 50px;
-            margin: 10px;
+        .draggable-text {
             display: inline-block;
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
         }
-        .red { background-color: red; }
-        .blue { background-color: blue; }
-        .green { background-color: green; }
         .drop-area {
             width: 100px;
-            height: 100px;
+            height: 50px;
             border: 2px dashed #ccc;
             margin: 10px;
             display: inline-block;
+            vertical-align: top;
         }
     </style>
 </head>
 <body>
     <div>
-        <div class="square red" draggable="true" ondragstart="drag(event)" id="redSquare"></div>
-        <div class="square blue" draggable="true" ondragstart="drag(event)" id="blueSquare"></div>
-        <div class="square green" draggable="true" ondragstart="drag(event)" id="greenSquare"></div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="redText">Red</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="blueText">Blue</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="greenText">Green</div>
     </div>
     <div>
         <p>Red</p>
@@ -65,7 +65,7 @@ courses: [SC-200,SC-300, AZ-500]
             var draggedElement = document.getElementById(data);
             var dropAreaColor = event.target.getAttribute("data-color");
 
-            if (draggedElement.classList.contains(dropAreaColor)) {
+            if (draggedElement.innerText.toLowerCase() === dropAreaColor) {
                 event.target.appendChild(draggedElement);
                 document.getElementById("message").innerText = "Correct!";
             } else {
