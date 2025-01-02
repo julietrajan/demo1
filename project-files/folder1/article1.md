@@ -6,7 +6,6 @@ sub-category: "Security"
 courses: [SC-200,SC-300, AZ-500]
 ---
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +29,7 @@ courses: [SC-200,SC-300, AZ-500]
             transform: scale(1.05);
         }
         .drop-area {
-            width: 150px;
+            width: 300px;
             height: 50px;
             border: 2px dashed #ccc;
             border-radius: 5px;
@@ -61,21 +60,31 @@ courses: [SC-200,SC-300, AZ-500]
 </head>
 <body>
     <div>
-        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="redText">Red</div>
-        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="blueText">Blue</div>
-        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="greenText">Green</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="azureDataFabrics">Azure Data Fabrics</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="azureSynapse">Azure Synapse</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="crmSocialSales">CRM, social media, sales databases</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="azurePurview">Azure Purview</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="synapseSpark">Synapse Spark</div>
     </div>
     <div>
-        <p>Red</p>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-color="red"></div>
+        <p>What tool did the team use to integrate diverse data sources?</p>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="azureDataFabrics"></div>
     </div>
     <div>
-        <p>Blue</p>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-color="blue"></div>
+        <p>Which platform did the team use for data analysis and running machine learning models?</p>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="azureSynapse"></div>
     </div>
     <div>
-        <p>Green</p>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-color="green"></div>
+        <p>What type of data sources were connected using Azure Data Fabrics?</p>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="crmSocialSales"></div>
+    </div>
+    <div>
+        <p>What Azure service can be used to create a unified data governance solution across the organization?</p>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="azurePurview"></div>
+    </div>
+    <div>
+        <p>Which feature of Azure Synapse allows for real-time data processing and analytics?</p>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="synapseSpark"></div>
     </div>
     <p id="message"></p>
 
@@ -92,9 +101,9 @@ courses: [SC-200,SC-300, AZ-500]
             event.preventDefault();
             var data = event.dataTransfer.getData("text");
             var draggedElement = document.getElementById(data);
-            var dropAreaColor = event.target.getAttribute("data-color");
+            var dropAreaAnswer = event.target.getAttribute("data-answer");
 
-            if (draggedElement.innerText.toLowerCase() === dropAreaColor) {
+            if (draggedElement.id === dropAreaAnswer) {
                 event.target.appendChild(draggedElement);
                 event.target.classList.add("correct");
                 event.target.classList.remove("incorrect");
