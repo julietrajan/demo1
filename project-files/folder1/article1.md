@@ -13,20 +13,58 @@ courses: [SC-200,SC-300, AZ-500]
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag and Drop Text Example</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
         .draggable-text {
             display: inline-block;
             margin: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .draggable-text:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
         }
         .drop-area {
-            width: 100px;
+            width: 150px;
             height: 50px;
             border: 2px dashed #ccc;
+            border-radius: 5px;
             margin: 10px;
             display: inline-block;
             vertical-align: top;
+            background-color: #fafafa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .drop-area:hover {
+            background-color: #f0f0f0;
+            border-color: #bbb;
+        }
+        .drop-area.correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .drop-area.incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        #message {
+            font-size: 1.2em;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -67,8 +105,12 @@ courses: [SC-200,SC-300, AZ-500]
 
             if (draggedElement.innerText.toLowerCase() === dropAreaColor) {
                 event.target.appendChild(draggedElement);
+                event.target.classList.add("correct");
+                event.target.classList.remove("incorrect");
                 document.getElementById("message").innerText = "Correct!";
             } else {
+                event.target.classList.add("incorrect");
+                event.target.classList.remove("correct");
                 document.getElementById("message").innerText = "Error: Incorrect match.";
             }
         }
