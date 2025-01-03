@@ -4,7 +4,7 @@ title:  "Article 6"
 category: "Comic"
 sub-category: "Security"
 ---
-# Title of the Case Study
+# Title of the Case Study test
 
 ## Case Study: HEINEKEN’s Digital Transformation and Security Strategy
 
