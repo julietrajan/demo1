@@ -29,7 +29,20 @@ body {
     align-items: center;
 }
 
-.fruits img, .colors div {
+.fruits img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+}
+
+.colors div {
     width: 100px;
     height: 100px;
     margin: 10px;
@@ -115,7 +128,7 @@ function checkMatch() {
             new LeaderLine(
                 document.getElementById(selectedFruit.id),
                 document.getElementById(selectedColor.id),
-                { color: 'blue', size: 4 }
+                { color: 'gray', size: 4 }
             );
             document.getElementById('message').innerText = '';
              document.getElementById('message').style.display = 'none';
