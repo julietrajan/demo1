@@ -30,8 +30,8 @@ body {
 }
 
 .questions img {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     margin: 10px;
     cursor: pointer;
     
@@ -43,8 +43,8 @@ body {
 }
 
 .answers div {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     margin: 10px;
     cursor: pointer;
     border: 2px solid #0F6CBD;
