@@ -76,11 +76,11 @@ body {
 <body>
     <div class="container">
         <div class="questions">
-            <img src="q1.jpeg" alt="Language Detection" id="q1">
-            <img src="q2.jpeg" alt="Key Phrase Extraction" id="q2">
-            <img src="q3.jpeg" alt="Sentiment Analysis" id="q3">
-            <img src="q4.jpeg" alt="Named Entity Recognition" id="q4">
-            <img src="q5.jpeg" alt="Entity Linking" id="q5">
+            <img src="q1.png" alt="Language Detection" id="q1">
+            <img src="q2.png" alt="Key Phrase Extraction" id="q2">
+            <img src="q3.png" alt="Sentiment Analysis" id="q3">
+            <img src="q4.png" alt="Named Entity Recognition" id="q4">
+            <img src="q5.png" alt="Entity Linking" id="q5">
         </div>
         <div class="answers">
             <div id="a1">Analyzes the sentiment of the text (positive, negative, neutral)</div>
