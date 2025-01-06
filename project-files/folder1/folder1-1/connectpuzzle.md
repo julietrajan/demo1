@@ -51,7 +51,7 @@ courses: [SC-200,SC-300, AZ-500]
 <body>
     <div class="container">
         <div class="fruits">
-            <img src="mfa1.jpg" alt="Apple" id="apple" draggable="true" ondragstart="drag(event)">
+            <img src="b1.jpg" alt="Apple" id="apple" draggable="true" ondragstart="drag(event)">
             <img src="b1.jpeg" alt="Banana" id="banana" draggable="true" ondragstart="drag(event)">
             <img src="bl2.jpeg" alt="Grape" id="grape" draggable="true" ondragstart="drag(event)">
         </div>
