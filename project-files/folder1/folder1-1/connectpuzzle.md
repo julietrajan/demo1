@@ -126,7 +126,7 @@ function checkMatch() {
             (selectedQuestion.id === 'q2' && selectedAnswer.id === 'a4') ||
             (selectedQuestion.id === 'q3' && selectedAnswer.id === 'a1')) ||
             (selectedQuestion.id === 'q4' && selectedAnswer.id === 'a5')) ||
-            (selectedQuestion.id === 'q5' && selectedAnswer.id === 'a3')){
+            (selectedQuestion.id === 'q5' && selectedAnswer.id === 'a3')) {
             isMatch = true;
         }
 
