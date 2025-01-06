@@ -13,7 +13,7 @@ courses: [SC-200,SC-300, AZ-500]
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruit Color Matching Game</title>
     <style>
-        body {
+body {
     font-family: Arial, sans-serif;
 }
 
@@ -38,6 +38,17 @@ courses: [SC-200,SC-300, AZ-500]
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fruits img.selected, .colors div.selected {
+    border: 2px solid lightblue;
+    box-shadow: 0 0 10px lightblue;
+}
+
+.fruits img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
     </style>
 </head>
@@ -57,16 +68,17 @@ courses: [SC-200,SC-300, AZ-500]
     <div id="message"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"></script>
     <script>
-        let selectedFruit = null;
+
+let selectedFruit = null;
 let selectedColor = null;
 
 document.querySelectorAll('.fruits img').forEach(fruit => {
     fruit.addEventListener('click', () => {
         if (selectedFruit) {
-            selectedFruit.style.border = '2px solid #000';
+            selectedFruit.classList.remove('selected');
         }
         selectedFruit = fruit;
-        selectedFruit.style.border = '2px solid blue';
+        selectedFruit.classList.add('selected');
         checkMatch();
     });
 });
@@ -74,10 +86,10 @@ document.querySelectorAll('.fruits img').forEach(fruit => {
 document.querySelectorAll('.colors div').forEach(color => {
     color.addEventListener('click', () => {
         if (selectedColor) {
-            selectedColor.style.border = '2px solid #000';
+            selectedColor.classList.remove('selected');
         }
         selectedColor = color;
-        selectedColor.style.border = '2px solid blue';
+        selectedColor.classList.add('selected');
         checkMatch();
     });
 });
@@ -102,8 +114,8 @@ function checkMatch() {
             document.getElementById('message').innerText = 'Error: Incorrect match!';
         }
 
-        selectedFruit.style.border = '2px solid #000';
-        selectedColor.style.border = '2px solid #000';
+        selectedFruit.classList.remove('selected');
+        selectedColor.classList.remove('selected');
         selectedFruit = null;
         selectedColor = null;
     }
