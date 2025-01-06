@@ -51,6 +51,17 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
+
+#message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+    display: none; /* Initially hidden */
+}
     </style>
 </head>
 <body>
@@ -108,11 +119,13 @@ function checkMatch() {
             new LeaderLine(
                 document.getElementById(selectedFruit.id),
                 document.getElementById(selectedColor.id),
-                { color: 'green', size: 4 }
+                { color: 'blue', size: 4 }
             );
             document.getElementById('message').innerText = '';
+             document.getElementById('message').style.display = 'none';
         } else {
-            document.getElementById('message').innerText = 'Error: Incorrect match!';
+            document.getElementById('message').innerText = 'Oops! Try Again!';
+            document.getElementById('message').style.display = 'block';
         }
 
         selectedFruit.classList.remove('selected');
