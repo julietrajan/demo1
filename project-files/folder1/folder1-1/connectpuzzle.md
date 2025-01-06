@@ -123,12 +123,13 @@ function checkMatch() {
     if (selectedQuestion && selectedAnswer) {
         let isMatch = false;
         if ((selectedQuestion.id === 'q1' && selectedAnswer.id === 'a2') ||
-            (selectedQuestion.id === 'q2' && selectedAnswer.id === 'a4') ||
-            (selectedQuestion.id === 'q3' && selectedAnswer.id === 'a1')) ||
-            (selectedQuestion.id === 'q4' && selectedAnswer.id === 'a5')) ||
-            (selectedQuestion.id === 'q5' && selectedAnswer.id === 'a3')) {
-            isMatch = true;
-        }
+    (selectedQuestion.id === 'q2' && selectedAnswer.id === 'a4') ||
+    (selectedQuestion.id === 'q3' && selectedAnswer.id === 'a1') ||
+    (selectedQuestion.id === 'q4' && selectedAnswer.id === 'a5') ||
+    (selectedQuestion.id === 'q5' && selectedAnswer.id === 'a3')) {
+    isMatch = true;
+}
+
 
         if (isMatch) {
             new LeaderLine(
