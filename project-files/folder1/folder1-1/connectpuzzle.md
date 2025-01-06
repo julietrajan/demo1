@@ -34,16 +34,17 @@ body {
     height: 100px;
     margin: 10px;
     cursor: pointer;
-    border: 2px solid #000;
+    border: 2px solid #0F6CBD;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
 }
 
 .fruits img.selected, .colors div.selected {
-    border: 2px solid lightblue;
-    box-shadow: 0 0 10px lightblue;
+    border: 5px solid #0F6CBD;
+    box-shadow: 0 0 30px #0F6CBD;
 }
 
 .fruits img:hover {
