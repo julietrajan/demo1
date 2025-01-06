@@ -23,13 +23,13 @@ body {
     margin-top: 50px;
 }
 
-.fruits, .colors {
+.questions, .answers {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.fruits img {
+.questions img {
     width: 100px;
     height: 100px;
     margin: 10px;
@@ -42,7 +42,7 @@ body {
     border-radius: 15px;
 }
 
-.colors div {
+.answers div {
     width: 100px;
     height: 100px;
     margin: 10px;
@@ -55,12 +55,12 @@ body {
     border-radius: 15px;
 }
 
-.fruits img.selected, .colors div.selected {
+.questions img.selected, .answers div.selected {
     border: 5px solid #0F6CBD;
     box-shadow: 0 0 30px #0F6CBD;
 }
 
-.fruits img:hover {
+.questions img:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -75,59 +75,65 @@ body {
 </head>
 <body>
     <div class="container">
-        <div class="fruits">
-            <img src="b1.jpeg" alt="Grape" id="grape">
-            <img src="bl2.jpeg" alt="Apple" id="apple">
-            <img src="b1.jpeg" alt="Banana" id="banana">
+        <div class="questions">
+            <img src="b1.jpeg" alt="Grape" id="q1">
+            <img src="bl2.jpeg" alt="Apple" id="q2">
+            <img src="b1.jpeg" alt="Banana" id="q3">
+            <img src="b1.jpeg" alt="Banana" id="q4">
+            <img src="b1.jpeg" alt="Banana" id="q5">
         </div>
-        <div class="colors">
-            <div id="red">Red</div>
-            <div id="yellow">Yellow</div>
-            <div id="purple">Purple</div>
+        <div class="answers">
+            <div id="a1">Analyzes the sentiment of the text (positive, negative, neutral)</div>
+            <div id="a2">Identifies the language of the input text</div>
+            <div id="a3">Links entities in the text to their corresponding entries in a knowledge base</div>
+            <div id="a4">Extracts important phrases from the text</div>
+            <div id="a5">Identifies and categorizes entities (e.g., people, organizations) in the text</div>
         </div>
     </div>
     <div id="message"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"></script>
     <script>
 
-let selectedFruit = null;
-let selectedColor = null;
+let selectedQuestion = null;
+let selectedAnswer = null;
 
-document.querySelectorAll('.fruits img').forEach(fruit => {
-    fruit.addEventListener('click', () => {
-        if (selectedFruit) {
-            selectedFruit.classList.remove('selected');
+document.querySelectorAll('.questions img').forEach(question => {
+    question.addEventListener('click', () => {
+        if (selectedQuestion) {
+            selectedQuestion.classList.remove('selected');
         }
-        selectedFruit = fruit;
-        selectedFruit.classList.add('selected');
+        selectedQuestion = question;
+        selectedQuestion.classList.add('selected');
         checkMatch();
     });
 });
 
-document.querySelectorAll('.colors div').forEach(color => {
-    color.addEventListener('click', () => {
-        if (selectedColor) {
-            selectedColor.classList.remove('selected');
+document.querySelectorAll('.answers div').forEach(answer => {
+    answer.addEventListener('click', () => {
+        if (selectedAnswer) {
+            selectedAnswer.classList.remove('selected');
         }
-        selectedColor = color;
-        selectedColor.classList.add('selected');
+        selectedAnswer = answer;
+        selectedAnswer.classList.add('selected');
         checkMatch();
     });
 });
 
 function checkMatch() {
-    if (selectedFruit && selectedColor) {
+    if (selectedQuestion && selectedAnswer) {
         let isMatch = false;
-        if ((selectedFruit.id === 'apple' && selectedColor.id === 'red') ||
-            (selectedFruit.id === 'banana' && selectedColor.id === 'yellow') ||
-            (selectedFruit.id === 'grape' && selectedColor.id === 'purple')) {
+        if ((selectedQuestion.id === 'q1' && selectedAnswer.id === 'a2') ||
+            (selectedQuestion.id === 'q2' && selectedAnswer.id === 'a4') ||
+            (selectedQuestion.id === 'q3' && selectedAnswer.id === 'a1')) ||
+            (selectedQuestion.id === 'q4' && selectedAnswer.id === 'a5')) ||
+            (selectedQuestion.id === 'q5' && selectedAnswer.id === 'a3')){
             isMatch = true;
         }
 
         if (isMatch) {
             new LeaderLine(
-                document.getElementById(selectedFruit.id),
-                document.getElementById(selectedColor.id),
+                document.getElementById(selectedQuestion.id),
+                document.getElementById(selectedAnswer.id),
                 { color: 'gray', size: 4 }
             );
             document.getElementById('message').innerText = '';
@@ -137,10 +143,10 @@ function checkMatch() {
             document.getElementById('message').style.display = 'block';
         }
 
-        selectedFruit.classList.remove('selected');
-        selectedColor.classList.remove('selected');
-        selectedFruit = null;
-        selectedColor = null;
+        selectedQuestion.classList.remove('selected');
+        selectedAnswer.classList.remove('selected');
+        selectedQuestion = null;
+        selectedAnswer = null;
     }
 }
     </script>
