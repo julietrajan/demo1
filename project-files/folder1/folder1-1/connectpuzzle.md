@@ -44,9 +44,9 @@ courses: [SC-200,SC-300, AZ-500]
 <body>
     <div class="container">
         <div class="fruits">
-            <img src="apple.png" alt="Apple" id="apple">
-            <img src="banana.png" alt="Banana" id="banana">
-            <img src="grape.png" alt="Grape" id="grape">
+            <img src="b1.jpeg" alt="Apple" id="apple">
+            <img src="bl2.jpeg" alt="Banana" id="banana">
+            <img src="b1.jpeg" alt="Grape" id="grape">
         </div>
         <div class="colors">
             <div id="red">Red</div>
