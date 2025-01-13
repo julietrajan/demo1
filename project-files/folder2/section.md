@@ -11,6 +11,7 @@ sub-category: "Security"
   <a href="#business-requirements" class="button">Business Requirements</a>
 </div>
 
+<div class="content">
 # Introduction
 <a id="introduction"></a>
 In today's rapidly evolving technological landscape, artificial intelligence (AI) has emerged as a transformative force, driving innovation and efficiency across various industries. This case study explores the implementation of Azure AI services to address specific business challenges and achieve strategic objectives.
@@ -67,7 +68,7 @@ User Adoption: Provide training and support to ensure smooth adoption of AI tool
 Skill Assessment: Evaluate current AI skills within the organization and identify gaps5.
 Resource Allocation: Allocate necessary resources, including budget and personnel, for AI initiatives5.
 Use Case Prioritization: Identify and prioritize AI use cases that align with business goals and offer the highest value5.
-
+</div>
 <style>
  
   .fixed-buttons {
@@ -90,5 +91,9 @@ Use Case Prioritization: Identify and prioritize AI use cases that align with bu
 
 .button:hover {
   background-color: #0056b3;
+}
+
+.content {
+  padding-top: 60px; /* Adjust this value as needed to ensure the heading is visible */
 }
 </style>
