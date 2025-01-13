@@ -5,7 +5,7 @@ category: "Comic"
 sub-category: "Security"
 ---
 <!-- Buttons -->
-<div style="text-align: center; margin-bottom: 20px;">
+<div class="fixed-buttons">
   <a href="#introduction" class="button">Introduction</a>
   <a href="#technical-requirements" class="button">Technical Requirements</a>
   <a href="#business-requirements" class="button">Business Requirements</a>
@@ -69,13 +69,21 @@ Resource Allocation: Allocate necessary resources, including budget and personne
 Use Case Prioritization: Identify and prioritize AI use cases that align with business goals and offer the highest value5.
 
 <style>
+ 
+  .fixed-buttons {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white; /* Optional: to match the background */
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
 .button {
-  display: inline-block;
+  margin: 0 10px;
   padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
+  background-color: #0078d4;
   color: white;
-  background-color: #007bff;
   text-decoration: none;
   border-radius: 5px;
 }
