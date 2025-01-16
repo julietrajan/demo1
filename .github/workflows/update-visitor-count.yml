@@ -33,3 +33,5 @@ jobs:
         git add project-files/folder1/visitors.txt
         git commit -m "Update visitor count to ${{ steps.increment_count.outputs.new_count }}"
         git push
+      env:
+        ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
