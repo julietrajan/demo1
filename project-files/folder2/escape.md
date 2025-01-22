@@ -6,6 +6,7 @@ sub-category: "Security"
 ---
 
 
+
 <html lang="en">
 <head>
 
@@ -28,6 +29,7 @@ sub-category: "Security"
         <p>What is the primary use of Azure OpenAI?</p>
         <input type="text" id="answer1">
         <button onclick="checkAnswer(1)">Submit</button>
+        <button onclick="helpMe(1)">Help Me</button>
         <div class="clue" id="clue1"></div>
     </div>
     <div id="puzzle2" class="puzzle">
@@ -35,6 +37,7 @@ sub-category: "Security"
         <p>Which Azure OpenAI feature can analyze text sentiment?</p>
         <input type="text" id="answer2">
         <button onclick="checkAnswer(2)">Submit</button>
+        <button onclick="helpMe(2)">Help Me</button>
         <div class="clue" id="clue2"></div>
     </div>
     <div id="finalChallenge" class="puzzle">
@@ -42,12 +45,14 @@ sub-category: "Security"
         <p>Combine the clues to solve the final challenge and escape the room!</p>
         <input type="text" id="finalAnswer">
         <button onclick="checkFinalAnswer()">Submit</button>
+        <button onclick="helpMe('final')">Help Me</button>
         <div class="clue" id="finalClue"></div>
     </div>
 
     <script>
         let currentPuzzle = 1;
         const clues = ["AI Tools", "Sentiment Analysis"];
+        const correctAnswers = ["ai tools", "sentiment analysis"];
 
         function startEscapeRoom() {
             document.getElementById('intro').style.display = 'none';
@@ -60,7 +65,6 @@ sub-category: "Security"
 
         function checkAnswer(puzzleNumber) {
             const answer = document.getElementById(`answer${puzzleNumber}`).value.toLowerCase();
-            const correctAnswers = ["ai tools", "sentiment analysis"];
             const clueElement = document.getElementById(`clue${puzzleNumber}`);
 
             if (answer === correctAnswers[puzzleNumber - 1]) {
@@ -79,6 +83,14 @@ sub-category: "Security"
                 }
             } else {
                 clueElement.textContent = 'Incorrect, try again!';
+            }
+        }
+
+        function helpMe(puzzleNumber) {
+            if (puzzleNumber === 'final') {
+                document.getElementById('finalAnswer').value = 'ai tools sentiment analysis';
+            } else {
+                document.getElementById(`answer${puzzleNumber}`).value = correctAnswers[puzzleNumber - 1];
             }
         }
 
