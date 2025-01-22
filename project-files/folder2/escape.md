@@ -11,7 +11,7 @@ sub-category: "Security"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual AI Escape Room</title>
     <style>
-        body { 
+        .room { 
             font-family: Arial, sans-serif; 
             text-align: center; 
             margin: 20px; 
@@ -54,6 +54,7 @@ sub-category: "Security"
     </style>
 </head>
 <body>
+    <div class="room">
     <h1>Virtual AI Escape Room</h1>
     <div id="intro">
         <p>Welcome to the Virtual AI Escape Room! Solve the puzzles using your knowledge of Azure OpenAI to escape.</p>
@@ -156,6 +157,8 @@ sub-category: "Security"
     <button onclick="helpMe('final')">Help Me</button>
     <div class="clue" id="finalClue"></div>
 </div>
+
+        </div>
 <script>
     let currentPuzzle = 1;
     const clues = ["Azure Open AI services", "GPT", "Azure Bot Services", "GPT", "DALL-E", "Azure Synapse Analytics", "Azure Open AI services", "GPT"];
