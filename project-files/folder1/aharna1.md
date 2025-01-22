@@ -115,7 +115,7 @@ Below are questions based on the scenario. Each question is on one side of a fli
             <div class="back">SMB and NFS</div>
         </div>
 
-        <div class="tile" onclick="checkAnswer(this, 'Premium PErformance Tier')">
+        <div class="tile" onclick="checkAnswer(this, 'Premium Performance Tier')">
         <div class="front">Which performance tier in Storage Account is suited for hosting data for a Mission Critical Application?</div>
         <div class="back">Premium Performance Tier!
         </div>
