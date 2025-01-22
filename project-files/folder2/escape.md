@@ -7,13 +7,50 @@ sub-category: "Security"
 
 <html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual AI Escape Room</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
-        .puzzle { display: none; }
-        .clue { margin-top: 20px; }
-        .puzzle input[type="radio"], .puzzle button { display: block; margin: 10px auto; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 20px; 
+            background-color: #2c3e50; 
+            color: #ecf0f1; 
+        }
+        h1, h2 {
+            color: #e74c3c;
+        }
+        .puzzle { 
+            display: none; 
+            background-color: #34495e; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-bottom: 20px; 
+        }
+        .clue { 
+            margin-top: 20px; 
+            font-weight: bold; 
+        }
+        .puzzle input[type="radio"], .puzzle button { 
+            margin: 10px auto; 
+        }
+        button {
+            background-color: #e74c3c; 
+            color: #ecf0f1; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        #intro {
+            background-color: #34495e; 
+            padding: 20px; 
+            border-radius: 10px; 
+        }
     </style>
 </head>
 <body>
@@ -110,14 +147,14 @@ sub-category: "Security"
         <button onclick="helpMe(8)">Help Me</button>
         <div class="clue" id="clue8"></div>
     </div>
-    <div id="finalChallenge" class="puzzle">
-        <h2>Final Challenge</h2>
-        <p>Combine the clues to solve the final challenge and escape the room!</p>
-        <input type="text" id="finalAnswer">
-        <button onclick="checkFinalAnswer()">Submit</button>
-        <button onclick="helpMe('final')">Help Me</button>
-        <div class="clue" id="finalClue"></div>
-    </div>
+<div id="finalChallenge" class="puzzle">
+    <h2>Final Challenge</h2>
+    <p>Combine the clues to solve the final challenge and escape the room!</p>
+    <input type="text" id="finalAnswer" style="display: block; margin: 10px auto;">
+    <button onclick="checkFinalAnswer()">Submit</button>
+    <button onclick="helpMe('final')">Help Me</button>
+    <div class="clue" id="finalClue"></div>
+</div>
 <script>
     let currentPuzzle = 1;
     const clues = ["Azure Open AI services", "GPT", "Azure Bot Services", "GPT", "DALL-E", "Azure Synapse Analytics", "Azure Open AI services", "GPT"];
