@@ -5,11 +5,11 @@ category: "Comic"
 sub-category: "Security"
 ---
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scaleVirtual AI Escape Room</title>
+
+
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
         .puzzle { display: none; }
@@ -45,52 +45,52 @@ sub-category: "Security"
     </div>
 
     <script>
-        let currentPuzzle = 0;
-        const clues = ["AI Tools", "Sentiment Analysis"];
+    let currentPuzzle = 1;
+    const clues = ["AI Tools", "Sentiment Analysis"];
 
-        function startEscapeRoom() {
-            document.getElementById('intro').style.display = 'none';
-            showPuzzle(1);
-        }
+    function startEscapeRoom() {
+        document.getElementById('intro').style.display = 'none';
+        showPuzzle(currentPuzzle);
+    }
 
-        function showPuzzle(puzzleNumber) {
-            document.getElementById(`puzzle${puzzleNumber}`).style.display = 'block';
-        }
+    function showPuzzle(puzzleNumber) {
+        document.getElementById(`puzzle${puzzleNumber}`).style.display = 'block';
+    }
 
-        function checkAnswer(puzzleNumber) {
-            const answer = document.getElementById(`answer${puzzleNumber}`).value.toLowerCase();
-            const correctAnswers = ["ai tools", "sentiment analysis"];
-            const clueElement = document.getElementById(`clue${puzzleNumber}`);
+    function checkAnswer(puzzleNumber) {
+        const answer = document.getElementById(`answer${puzzleNumber}`).value.toLowerCase();
+        const correctAnswers = ["ai tools", "sentiment analysis"];
+        const clueElement = document.getElementById(`clue${puzzleNumber}`);
 
-            if (answer === correctAnswers[puzzleNumber - 1]) {
-                clueElement.textContent = `Correct! Clue: ${clues[puzzleNumber - 1]}`;
-                currentPuzzle++;
-                if (currentPuzzle < clues.length) {
-                    setTimeout(() => {
-                        document.getElementById(`puzzle${puzzleNumber}`).style.display = 'none';
-                        showPuzzle(currentPuzzle + 1);
-                    }, 1000);
-                } else {
-                    setTimeout(() => {
-                        document.getElementById(`puzzle${puzzleNumber}`).style.display = 'none';
-                        document.getElementById('finalChallenge').style.display = 'block';
-                    }, 1000);
-                }
+        if (answer === correctAnswers[puzzleNumber - 1]) {
+            clueElement.textContent = `Correct! Clue: ${clues[puzzleNumber - 1]}`;
+            currentPuzzle++;
+            if (currentPuzzle <= clues.length) {
+                setTimeout(() => {
+                    document.getElementById(`puzzle${puzzleNumber}`).style.display = 'none';
+                    showPuzzle(currentPuzzle);
+                }, 1000);
             } else {
-                clueElement.textContent = 'Incorrect, try again!';
+                setTimeout(() => {
+                    document.getElementById(`puzzle${puzzleNumber}`).style.display = 'none';
+                    document.getElementById('finalChallenge').style.display = 'block';
+                }, 1000);
             }
+        } else {
+            clueElement.textContent = 'Incorrect, try again!';
         }
+    }
 
-        function checkFinalAnswer() {
-            const finalAnswer = document.getElementById('finalAnswer').value.toLowerCase();
-            const finalClueElement = document.getElementById('finalClue');
+    function checkFinalAnswer() {
+        const finalAnswer = document.getElementById('finalAnswer').value.toLowerCase();
+        const finalClueElement = document.getElementById('finalClue');
 
-            if (finalAnswer === 'ai tools sentiment analysis') {
-                finalClueElement.textContent = 'Congratulations! You have escaped the room!';
-            } else {
-                finalClueElement.textContent = 'Incorrect, try again!';
-            }
+        if (finalAnswer === 'ai tools sentiment analysis') {
+            finalClueElement.textContent = 'Congratulations! You have escaped the room!';
+        } else {
+            finalClueElement.textContent = 'Incorrect, try again!';
         }
-    </script>
+    }
+</script>
 </body>
 </html>
