@@ -148,8 +148,9 @@ sub-category: "Security"
         <div class="clue" id="clue8"></div>
     </div>
 <div id="finalChallenge" class="puzzle">
-    <h2>Final Challenge</h2>
-    <p>Combine the clues to solve the final challenge and escape the room!</p>
+    <h2>Final Challenge: The Ultimate Test</h2>
+    <p>To complete your mission, you need to demonstrate your understanding of prompt engineering. Fill in the blank to complete the statement:</p>
+    <p>Effective prompt engineering involves crafting prompts that are clear, concise, and provide sufficient </p>
     <input type="text" id="finalAnswer" style="display: block; margin: 10px auto;">
     <button onclick="checkFinalAnswer()">Submit</button>
     <button onclick="helpMe('final')">Help Me</button>
@@ -194,7 +195,7 @@ sub-category: "Security"
 
     function helpMe(puzzleNumber) {
         if (puzzleNumber === 'final') {
-            document.getElementById('finalAnswer').value = 'azure open ai services gpt azure bot services gpt dall-e azure synapse analytics azure open ai services gpt';
+            document.getElementById('finalAnswer').value = 'context';
         } else {
             document.querySelector(`input[name="answer${puzzleNumber}"][value="${correctAnswers[puzzleNumber - 1]}"]`).checked = true;
         }
@@ -204,7 +205,7 @@ sub-category: "Security"
         const finalAnswer = document.getElementById('finalAnswer').value.toLowerCase();
         const finalClueElement = document.getElementById('finalClue');
 
-        if (finalAnswer === 'azure open ai services gpt azure bot services gpt dall-e azure synapse analytics azure open ai services gpt') {
+        if (finalAnswer === 'context') {
             finalClueElement.textContent = 'Congratulations! You have escaped the room!';
         } else {
             finalClueElement.textContent = 'Incorrect, try again!';
