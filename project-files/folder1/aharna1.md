@@ -69,7 +69,7 @@ Below are questions based on the scenario. Each question is on one side of a fli
         }
         .tile .back {
             transform: rotateY(180deg);
-            background: linear-gradient(135deg, #bbdefb, #64b5f6); 
+            background: linear-gradient(135deg, #a8e6cf, #388e3c); 
               font-size: 20px;
         }
         .tile.flipped {
