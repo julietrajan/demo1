@@ -137,5 +137,3 @@ Below are questions based on the scenario. Each question is on one side of a fli
             }
         }
     </script>
-</body>
-</html>
