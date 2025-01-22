@@ -3,7 +3,7 @@ layout: default
 title:  "Aharna"
 category: "Case Study"
 sub-category: "Security"
-courses: [SC-200,SC-300, AZ-500]
+courses: [AZ-104, AZ-305, AZ-1003]
 ---
 
 # Alex's Adventures in Azureland
@@ -70,7 +70,7 @@ Below are questions based on the scenario. Each question is on one side of a fli
         .tile .back {
             transform: rotateY(180deg);
             background: linear-gradient(135deg, #bbdefb, #64b5f6); 
-              font-size: 24px;
+              font-size: 20px;
         }
         .tile.flipped {
             transform: rotateY(180deg);
@@ -131,7 +131,7 @@ Below are questions based on the scenario. Each question is on one side of a fli
                     tile.querySelector('.back').textContent = '';
                 }, 600); // Wait for the flip animation to complete
             } else {
-                tile.querySelector('.back').style.backgroundColor = 'green';
+                tile.querySelector('.back').style.backgroundColor = 'lightgray';
                 tile.querySelector('.back').textContent = answer;
                 tile.classList.add('flipped');
             }
