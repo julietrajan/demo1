@@ -6,23 +6,17 @@ sub-category: "Security"
 courses: [SC-200,SC-300, AZ-500]
 ---
 
-# Smart City Initiative - Single Service Vs Multi-Service Account
+# Alex's Adventures in Azureland
 
 ## Introduction
 
-City of Innovaville is launching a Smart City Initiative to improve urban living through technology. The city plans to use Azure AI services to enhance various aspects of city management, including traffic monitoring, public safety, and environmental monitoring.
+In the bustling city of Techville, two young tech enthusiasts, Alex and Zara, stumbled upon an ancient, mysterious book in their local library. The book, titled "The Secrets of Azureland," promised to unlock the hidden powers of the cloud.
 
-#### Single Service Example: Traffic Monitoring
-For traffic monitoring, Innovaville decides to use Azure Computer Vision to analyze live video feeds from traffic cameras. Since this task requires a specialized AI service focused on image and video analysis, they create a single-service resource for Azure Computer Vision. This allows them to have granular control over the specific capabilities and configurations needed for traffic monitoring.
+Curious and excited, Alex and Zara decided to embark on a thrilling adventure to uncover these secrets. As they opened the book, a swirling vortex of light enveloped them, transporting them to a magical realm called Azureland.
 
-#### Multi-Service Example: Public Safety and Environmental Monitoring
-For public safety and environmental monitoring, Innovaville needs to integrate multiple AI services. They plan to use:
+In this enchanted land, their first mission was to uncover the secrets of Azure Storage. They were presented with several flip cards, each representing a unique feature of Azure Storage. Each card contained a question, and flipping the card would reveal the answer.
 
-- Azure Text Analytics to analyze social media posts and detect potential public safety threats.<br>
-- Azure Speech Services to transcribe emergency calls and analyze the sentiment of callers.<br>
-- Azure Anomaly Detector to monitor environmental sensors for unusual patterns in air quality and noise levels.
-
-To streamline management and billing, Innovaville creates a multi-service resource. This allows them to access all these AI services with a single set of credentials and a unified endpoint, simplifying integration and reducing administrative overhead.
+However, Alex and Zara were unfamiliar with Azure Storage Accounts. Your goal is to help them answer the questions correctly, collect all the cards, and become Azure Storage Masters!
 
 ### Instructions for Flip Cards
 Below are questions based on the scenario. Each question is on one side of a flip card. Flip the card to see the answer.
@@ -89,27 +83,43 @@ Below are questions based on the scenario. Each question is on one side of a fli
 <body>
     <div class="question"></div>
     <div class="tile-container">
-        <div class="tile" onclick="checkAnswer(this, 'Single-service account (Computer Vision)')">
-            <div class="front">You need to analyze live video feeds from traffic cameras to monitor traffic flow and detect incidents in real-time. What type of Azure AI service account should you use?</div>
-            <div class="back">Single-service account (Computer Vision)</div>
+
+        <div class="tile" onclick="checkAnswer(this, 'Read-access geo-redundant storage (RA-GRS) and Read-access geo-zone-redundant storage (RA-GZRS)')">
+            <div class="front">Which redundancy options available for Azure Storage Accounts allows read access to the secondary region?</div>
+            <div class="back">Read-access geo-redundant storage (RA-GRS) and Read-access geo-zone-redundant storage (RA-GZRS)</div>
         </div>
-        <div class="tile" onclick="checkAnswer(this, 'Multi-service account (Language Service)')">
-            <div class="front">Your project involves analyzing customer feedback from multiple sources, including social media, emails, and surveys, to understand sentiment and key topics. What type of Azure AI service account should you use?</div>
-            <div class="back">Multi-service account (Language Service)</div>
+
+        <div class="tile" onclick="checkAnswer(this, 'Shared Access Signature')">
+            <div class="front">Which Azure Blob access method allows providing access for a specific timespan?</div>
+            <div class="back">Shared Access Signature</div>
         </div>
-        <div class="tile" onclick="checkAnswer(this, 'Multi-service account (Speech Services, Translator)')">
-            <div class="front">You are developing a voice-activated virtual assistant that can understand and respond to user queries, transcribe spoken words, and translate languages. What type of Azure AI service account should you use?</div>
-            <div class="back">Multi-service account (Speech Services, Translator)</div>
+
+        <div class="tile" onclick="checkAnswer(this, 'Transaction Optimized Tier')">
+            <div class="front">Which of these is NOT a security feature for Azure Storage Account?
+            1. Shared Access Signatures (SAS)
+            2. Azure Active Directory (Azure AD) Integration
+            3. Encryption at Rest
+            4. Transaction Optimized Tier
+            5. Encryption in Transit
+            </div>
+            <div class="back">Transaction Optimized Tier</div>
         </div>
-        <div class="tile" onclick="checkAnswer(this, 'Single-service account')">
-            <div class="front">Your team needs to use different tiers for different services and different members need different level of access for the services. What type of Azure AI service account should you use?</div>
-            <div class="back">Single-service account</div>
+
+        <div class="tile" onclick="checkAnswer(this, 'Hot, Cool, Cold and Archive')">
+            <div class="front">What are the different access tiers available for Azure Blob Storage?</div>
+            <div class="back">Hot, Cool, Cold and Archive</div>
         </div>
       
-        <div class="tile" onclick="checkAnswer(this, 'Single-service account (Face API, Anomaly Detector, Language Service)')">
-            <div class="front">You are tasked with creating a comprehensive security monitoring system that includes facial recognition for access control, anomaly detection for unusual activities, and text analysis for threat detection. What type of Azure AI service account should you use?</div>
-            <div class="back">Single-service account (Face API, Anomaly Detector, Language Service)</div>
+        <div class="tile" onclick="checkAnswer(this, 'SMB and NFS')">
+            <div class="front">Which protocols are supported by Azure File Share?</div>
+            <div class="back">SMB and NFS</div>
         </div>
+
+        <div class="tile" onclick="checkAnswer(this, 'Premium PErformance Tier')">
+        <div class="front">Which performance tier in Storage Account is suited for hosting data for a Mission Critical Application?</div>
+        <div class="back">Premium Performance Tier!
+        </div>
+
     </div>
 
     <script>
