@@ -148,7 +148,7 @@ sub-category: "Security"
         <button onclick="helpMe(8)">Help Me</button>
         <div class="clue" id="clue8"></div>
     </div>
-<div id="finalChallenge" class="puzzle">
+    <div id="finalChallenge" class="puzzle">
     <h2>Final Challenge: The Ultimate Test</h2>
     <p>To complete your mission, you need to demonstrate your understanding of prompt engineering. Fill in the blank to complete the statement:</p>
     <p>Effective prompt engineering involves crafting prompts that are clear, concise, and provide sufficient </p>
@@ -156,9 +156,8 @@ sub-category: "Security"
     <button onclick="checkFinalAnswer()">Submit</button>
     <button onclick="helpMe('final')">Help Me</button>
     <div class="clue" id="finalClue"></div>
-</div>
-
-        </div>
+    </div>
+    </div>
 <script>
     let currentPuzzle = 1;
     const clues = ["Azure Open AI services", "GPT", "Azure Bot Services", "GPT", "DALL-E", "Azure Synapse Analytics", "Azure Open AI services", "GPT"];
@@ -215,3 +214,5 @@ sub-category: "Security"
         }
     }
 </script>
+</body>
+</html>
