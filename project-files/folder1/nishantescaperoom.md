@@ -1,8 +1,8 @@
 ---
 layout: default
 title:  "RAG Escape Room"
-category: "Gamification"
-sub-category: "Data and AI"
+category: "Case Study"
+sub-category: "Security"
 courses: [AI-102, AI-3016, AI-3018]
 ---
 
