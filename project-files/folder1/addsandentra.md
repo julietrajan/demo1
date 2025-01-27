@@ -5,7 +5,7 @@ category: "Case Study"
 sub-category: "Security"
 courses: [AI-102, AI-3016, AI-3018]
 ---
-# VanArsdel's Journey to Azure AD
+# VanArsdel's Journey to Microsoft Entra ID
 
 ## Introduction:
 
