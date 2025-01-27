@@ -18,3 +18,82 @@ Your goal is to help the team identify which features or services belong to ADDS
 
 
 ## Match the features to each column below by dragging and dropping.
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Text Example</title>
+    <style>
+
+        .draggable-text {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .draggable-text:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+        .drop-area {
+            width: 300px;
+            height: 50px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fafafa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .drop-area:hover {
+            background-color: #f0f0f0;
+            border-color: #bbb;
+        }
+        .drop-area.correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .drop-area.incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        #message {
+            font-size: 1.2em;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    #message.correct {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+    }
+    #message.incorrect {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="Kerberos, NTLM">Kerberos, NTLM</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="SAML, OIDC, WS-FED">AML, OIDC, WS-FED</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="Tenants">Tenants</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="On-premises Printers">On-premises Printers"</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="M365 and Azure Services integration">M365 and Azure Services integration</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="Forest, Domain, OU">Forest, Domain, OU</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="Cloud Identity">Cloud Identity</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="Policy">Policy</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="On-premises identity">On-premises Identity</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="On-premises application">On-premises application</div>
+    </div>
+</body>
