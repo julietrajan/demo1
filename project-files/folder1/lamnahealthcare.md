@@ -7,7 +7,7 @@ courses: [AI-102, AI-3016, AI-3018]
 ---
 # Fortify Lamna Healthcare's Data
 
-## Introduction:
+## Introduction
 
 Once upon a time in the bustling city of Techville, there was a renowned healthcare organization called Lamna Healthcare. 
 Lamna Healthcare was known for its cutting-edge medical research and exceptional patient care. However, as the organization grew, so did its data security concerns. They needed to ensure that their patient data, stored in Azure SQL Database, was accessed privately and securely, without exposure to the public internet.
