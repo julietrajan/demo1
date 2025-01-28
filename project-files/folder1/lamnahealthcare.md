@@ -99,31 +99,32 @@ The IT team at Lamna Healthcare, led by the brilliant and meticulous Sarah, was 
         <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="8">Provide access to multiple instances of a service</div>
         <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="9">Uses a private IP address from your virtual network to connect to Azure service</div>
         <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="10">Routes traffic through the Azure backbone network, but uses public IP address of the Azure service</div>
-        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="11">Uses private DNS zones to resolve the private IP address of the service</div>
-         <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="12">Uses public DNS names to resolve the service's public IP address</div>
+        <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="11">Uses public DNS names to resolve the service's public IP address</div>
+         <div class="draggable-text" draggable="true" ondragstart="drag(event)" id="12">Uses private DNS zones to resolve the private IP address of the service</div>
     </div>
 
     <div>
-        <p><b>Entra ID</b></p>
+        <p><b>Service Endpoint</b></p>
         <div class="drop-area-container">
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="SAML/OIDC/ WS-FED,Tenants,M365 and Azure Services integration,Cloud Identity,CPolicy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="SAML/OIDC/ WS-FED,Tenants,M365 and Azure Services integration,Cloud Identity,CPolicy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="SAML/OIDC/ WS-FED,Tenants,M365 and Azure Services integration,Cloud Identity,CPolicy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="SAML/OIDC/ WS-FED,Tenants,M365 and Azure Services integration,Cloud Identity,CPolicy"></div>
-          <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="SAML/OIDC/ WS-FED,Tenants,M365 and Azure Services integration,Cloud Identity,CPolicy"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="1,4,6,8,10,11"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="1,4,6,8,10,11"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="1,4,6,8,10,11"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="1,4,6,8,10,11"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="1,4,6,8,10,11"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="1,4,6,8,10,11"></div>
           </div>
         <p class="message"></p>
     </div>
 
     <div>
-        <p><b>Active Directory Domain Services</b></p>
+        <p><b>Private Endpoint</b></p>
          <div class="drop-area-container">
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="Kerberos/NTLM,On-premises Printers,Forest/Domain/OU,On-premises identity,On-premises application,Policy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="Kerberos/NTLM,On-premises Printers,Forest/Domain/OU,On-premises identity,On-premises application,Policy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="Kerberos/NTLM,On-premises Printers,Forest/Domain/OU,On-premises identity,On-premises application,Policy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="Kerberos/NTLM,On-premises Printers,Forest/Domain/OU,On-premises identity,On-premises application,Policy"></div>
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="Kerberos/NTLM,On-premises Printers,Forest/Domain/OU,On-premises identity,On-premises application,Policy"></div>        
-        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="Kerberos/NTLM,On-premises Printers,Forest/Domain/OU,On-premises identity,On-premises application,Policy"></div>        
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="2,3,5,7,9,12"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="2,3,5,7,9,12"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="2,3,5,7,9,12"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="2,3,5,7,9,12"></div>
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="2,3,5,7,9,12"></div>        
+        <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" data-answer="2,3,5,7,9,12"></div>        
         </div>
         <p class="message"></p>
     </div>
