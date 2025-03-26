@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Onboarding Avatar"
-category: "Gamification"
+category: "Case Study"
 sub-category: "Data and AI"
 courses: [AI-102,]
 ---
