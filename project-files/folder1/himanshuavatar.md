@@ -1,9 +1,9 @@
 ---
 layout: default
-title:  "Onboarding Avatar"
+title:  "Himanshu Avatar"
 category: "Case Study"
-sub-category: "Data and AI"
-courses: [AI-102,]
+sub-category: "Security"
+courses: [AI-102, AI-3016, AI-3018]
 ---
 
 # TechNova’s AI Employee Onboarding Avatar
