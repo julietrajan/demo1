@@ -23,6 +23,21 @@ You are a developer tasked with containerizing your Python app and run it. Your 
 Rearrange the following instructions and create a functional Docker file for the python application that you are developing. 
 Dockerfile Instructions:
 
+<div class="column1">
+  <ul id="sortable-setup" class="styled-list">
+    <li class="ui-state-default" data-order="4">WORKDIR /app</li>
+    <li class="ui-state-default" data-order="6">CMD [“python”, “sample.py”]</li>
+    <li class="ui-state-default" data-order="5">COPY sample.py ./</li>
+    <li class="ui-state-default" data-order="2">Run apt-get update && apt-get install -y</li>
+    <li class="ui-state-default" data-order="3">RUN mkdir /app</li>
+    <li class="ui-state-default" data-order="1">FROM python</li>
+  </ul>
+</div>  
+
+<button onclick="checkOrderSetup()">Check Order</button>
+<button onclick="helpMeSetup()">Help me</button>
+<p id="feedback-setup"></p>
+
 
 ## Question 2: 
 Now since you got the Dockerfile now, you are ready to build the container image and push it to the container registry. We will be using Azure Container Registry (ACR) for hosting our container images. Please select what tools you can use to build your image and push it to ACR. Choose all that apply.
@@ -58,7 +73,38 @@ Please select the right Azure ACR Task command to build the container image and 
 
 
 <script>
-  
+        $(function() {
+      $("#sortable-setup").sortable();
+      $("#sortable-setup").disableSelection();
+    });
+
+
+    function checkOrderSetup() {
+      var items = $("#sortable-setup li");
+      var correct = true;
+      items.each(function(index) {
+        if ($(this).data("order") !== index + 1) {
+          correct = false;
+        }
+      });
+      var feedback = document.getElementById("feedback-setup");
+      if (correct) {
+        feedback.textContent = "Correct order!";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = "Incorrect order. Try again.";
+        feedback.style.color = "red";
+      }
+    }
+
+    function helpMeSetup() {
+      var items = $("#sortable-setup li").sort(function(a, b) {
+        return $(a).data("order") - $(b).data("order");
+      });
+      $("#sortable-setup").html(items);
+      document.getElementById("feedback-setup").textContent = "Here is the correct order.";
+      document.getElementById("feedback-setup").style.color = "blue";
+    }
 
   function checkAnswer2() {
     var radios = document.getElementsByName('q2');
