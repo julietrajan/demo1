@@ -73,12 +73,6 @@ Please select the right Azure ACR Task command to build the container image and 
 
 
 <script>
-        $(function() {
-      $("#sortable-setup").sortable();
-      $("#sortable-setup").disableSelection();
-    });
-
-
     function checkOrderSetup() {
       var items = $("#sortable-setup li");
       var correct = true;
