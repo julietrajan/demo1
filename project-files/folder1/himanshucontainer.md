@@ -102,7 +102,7 @@ Please select the right Azure ACR Task command to build the container image and 
 
   function checkAnswer2() {
     var radios = document.getElementsByName('q2');
-    var correctAnswer = 'A';
+    var correctAnswer = ['A', 'B'];
     var result = document.getElementById('result2');
     var selected = false;
 
