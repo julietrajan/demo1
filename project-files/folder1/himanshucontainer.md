@@ -76,20 +76,6 @@ You are a developer tasked with containerizing your Python app and run it. Your 
 
 ## Question 2: 
 
-<form id="quizForm2">
-  <input type="radio" id="q2a" name="q2" value="A">
-  <label for="q2a">A. Docker CLI</label><br>
-  <input type="radio" id="q2b" name="q2" value="B">
-  <label for="q2b">B. Azure ACR Tasks</label><br>
-  <input type="radio" id="q2c" name="q2" value="C">
-  <label for="q2c">C. Kubectl</label><br>
-  <input type="radio" id="q2d" name="q2" value="D">
-  <label for="q2d">D. Azure CLI</label><br>
-  <button type="button" onclick="checkAnswer2()" class="styled-button">Submit</button>
-</form>
-
-<p id="result2"></p>
-
 
 Now since you got the Dockerfile now, you are ready to build the container image and push it to the container registry. We will be using Azure Container Registry (ACR) for hosting our container images. Please select what tools you can use to build your image and push it to ACR. Choose all that apply.
 
@@ -106,56 +92,7 @@ Now since you got the Dockerfile now, you are ready to build the container image
 <p id="result"></p>
 
 <style>
-  .checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    user-select: none;
-  }
-
-  .checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-
-  .checkbox-container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-
-  .checkbox-container input:checked ~ .checkmark:after {
-    display: block;
-  }
-
-  .checkbox-container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-  }
+ 
 
   #result {
     font-size: 20px;
