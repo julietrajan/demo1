@@ -75,7 +75,6 @@ You are a developer tasked with containerizing your Python app and run it. Your 
 </script>
 
 ## Question 2: 
-Now since you got the Dockerfile now, you are ready to build the container image and push it to the container registry. We will be using Azure Container Registry (ACR) for hosting our container images. Please select what tools you can use to build your image and push it to ACR. Choose all that apply.
 
 <form id="quizForm2">
   <input type="radio" id="q2a" name="q2" value="A">
@@ -90,6 +89,110 @@ Now since you got the Dockerfile now, you are ready to build the container image
 </form>
 
 <p id="result2"></p>
+
+
+Now since you got the Dockerfile now, you are ready to build the container image and push it to the container registry. We will be using Azure Container Registry (ACR) for hosting our container images. Please select what tools you can use to build your image and push it to ACR. Choose all that apply.
+
+<form id="quiz-form">
+  <label class="checkbox-container"><input type="checkbox" name="service" value="1"> A. Docker CLI<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="2"> B. Azure ACR Tasks<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="3"> C. Kubectl<span class="checkmark"></span></label><br>
+  <label class="checkbox-container"><input type="checkbox" name="service" value="4">D. Azure CLI<span class="checkmark"></span></label><br>
+
+  <button type="button" onclick="checkAnswers()">Check Answer</button>
+  <button type="button" onclick="showAnswers()">Help Me</button>
+</form>
+
+<p id="result"></p>
+
+<style>
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+  }
+
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  #result {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  #result.correct {
+    color: blue;
+  }
+
+  #result.incorrect {
+    color: red;
+  }
+</style>
+
+<script>
+  const correctAnswers = [2, 3];
+
+  function checkAnswers() {
+    const selected = Array.from(document.querySelectorAll('input[name="service"]:checked')).map(cb => parseInt(cb.value));
+    const isCorrect = correctAnswers.every(val => selected.includes(val)) && selected.length === correctAnswers.length;
+    const resultElement = document.getElementById('result');
+    resultElement.innerText = isCorrect ? 'Correct' : 'Try again';
+    resultElement.className = isCorrect ? 'correct' : 'incorrect';
+  }
+
+  function showAnswers() {
+    document.querySelectorAll('input[name="service"]').forEach(cb => {
+      cb.checked = correctAnswers.includes(parseInt(cb.value));
+    });
+    const resultElement = document.getElementById('result');
+    resultElement.innerText = 'This is the correct order';
+    resultElement.className = 'correct';
+  }
+</script>
+
+
 
 ## Question 3: 
 Please select the right Azure ACR Task command to build the container image and push the image to ACR. Select one.
